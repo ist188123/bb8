@@ -24,7 +24,7 @@ client.on("message", async (msg) => {
   
   if(msg.content.startsWith('5ovos')){
    
-    let pokestop = x.split(" ").slice(1).join(" ");
+     let pokestop =  msg.content.split(" ").slice(1).join(" ");
  // let roleName = msg.content.split(" ").slice(1).join(" ");
 let roleName ="CHANSEY";
   //Filtering the guild members only keeping those with the role
