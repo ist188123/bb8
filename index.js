@@ -6,7 +6,8 @@ client.on("message", async (msg) => {
   
   
   if (msg.content.startsWith('%')) {
-    msg.reply("oi");
+    var role = msg.guild.roles.find(role => role.name === "chansey");
+    msg.member.addRole(role);
     
   }
   
