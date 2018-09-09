@@ -14,7 +14,7 @@ client.on("message", async (msg) => {
   
  
   
- if(msg.content.search('chansey')){
+ if(msg.content.search('/chansey/g')){
     let roleName = msg.content.split(" ").slice(1).join(" ");
 
     //Filtering the guild members only keeping those with the role
