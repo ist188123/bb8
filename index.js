@@ -25,7 +25,7 @@ client.on("message", async (msg) => {
     }).map(member => {
       //msg.guild.channels.find("name", "quest-info").sendMessage('\@'+member.user.username)
       // msg.guild.channels.find("name", "quest-info").sendMessage(client.users.find(member.user.username, "mensagem").toString())
-        msg.channel.send("Hey \@" +member.user.username  + " how's it going?"+msg.author);
+        msg.channel.send("Hey " +member.user  + " how's it going?"+msg.author);
      
     })
 
