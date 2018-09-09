@@ -20,7 +20,7 @@ client.on("message", async (msg) => {
   
   
     
-let notifica==0;
+let notifica=="sim";
   
   if(msg.content.startsWith('5ovos')){
    
@@ -57,9 +57,9 @@ let roleName ="CHANSEY";
                 .setTimestamp();
 
 
-       if(notifica=0){
+       if(notifica="sim"){
             msg.guild.channels.find("name", "quest-info").sendMessage({ embed });
-         notifica==1;
+         notifica=="no";
        }
             msg.channel.send("Notificado: " +member.user  );
    
