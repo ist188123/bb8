@@ -26,6 +26,7 @@ client.on("message", async (msg) => {
       //msg.guild.channels.find("name", "quest-info").sendMessage('\@'+member.user.username)
       // msg.guild.channels.find("name", "quest-info").sendMessage(client.users.find(member.user.username, "mensagem").toString())
         msg.channel.send("Hey " + msg.author + " how's it going?");
+      msg.channel.send('Oi ${msg.author} kkkk it going?');
     })
 
   
