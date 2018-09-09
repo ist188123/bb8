@@ -14,7 +14,7 @@ client.on("message", async (msg) => {
   
   
   
-  if(msg.content.startsWith("//inrole")){
+  if(msg.content.startsWith("//chansey")){
     let roleName = msg.content.split(" ").slice(1).join(" ");
 
     //Filtering the guild members only keeping those with the role
