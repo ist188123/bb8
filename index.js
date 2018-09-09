@@ -19,7 +19,7 @@ client.on("message", async (msg) => {
   //----
   
   
-    let envia="1";
+    let notif="";
 
   
   if(msg.content.startsWith('5ovos')){
@@ -39,40 +39,34 @@ let roleName ="CHANSEY";
     // msg.guild.channels.find("name", "quest-info").sendMessage(client.users.find(member.user.username, "mensagem").toString())
     
     
+      
+         notif=notif+member.user+"\n"
+          
+           // msg.guild.channels.find("name", "quest-info").sendMessage("Notificado: " +member.user);
     
     
-    
-    
-           const embed = new Discord.RichEmbed()
+  })
+  
+  
+
+ const embed = new Discord.RichEmbed()
                 .setTitle(pokestop)
                 .setAuthor("POKESTOP", "https://exraidspinhalnovo.webnode.pt/_files/200000044-1157e1263e/450/pstop.png")
                 /*
                  * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
                  */
                 .setColor(0x00AE86)
-                .setDescription("CHOCAR 5 OVOS")
+                .setDescription("CHOCAR 5 OVOS\nNotificado:\n"+notif)
                 .setFooter("Pubicado "+autor, "")
 
 
                 .setThumbnail("https://exraidspinhalnovo.webnode.pt/_files/200000043-cd4a1ce43f/450/chansey.png")
 
                 .setTimestamp();
-
-
-if(envia=="1"){
-      
-            msg.guild.channels.find("name", "quest-info").sendMessage({ embed });
-            envia="0";
-}   
-          
-         
-          
-            msg.guild.channels.find("name", "quest-info").sendMessage("Notificado: " +member.user);
-    
-    
-  })
-
-
+  
+   msg.guild.channels.find("name", "quest-info").sendMessage({ embed });
+  
+  
 }
   
   
