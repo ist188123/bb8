@@ -23,7 +23,7 @@ client.on("message", async (msg) => {
        
         return member.roles.find("name", roleName);
     }).map(member => {
-       msg.guild.channels.find("name", "quest-info").sendMessage(member.user.username+" nome da quest")
+       msg.guild.channels.find("name", "quest-info").sendMessage(member.user.username)
         
     })
 
