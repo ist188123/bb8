@@ -20,7 +20,7 @@ client.on("message", async (msg) => {
   
   
     
-let notifica=="sim";
+
   
   if(msg.content.startsWith('5ovos')){
    
