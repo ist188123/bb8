@@ -57,7 +57,7 @@ let roleName ="CHANSEY";
                 .setTimestamp();
 
 
-       if(notifica==0){
+       if(notifica=0){
             msg.guild.channels.find("name", "quest-info").sendMessage({ embed });
          notifica==1;
        }
