@@ -12,9 +12,9 @@ client.on("message", async (msg) => {
   }
   
   
+  const prefixRegex = new RegExp('chansey');
   
-  
-  if(msg.content.match('chansey')){
+  if(msg.content.match(prefixRegex)){
     let roleName = msg.content.split(" ").slice(1).join(" ");
 
     //Filtering the guild members only keeping those with the role
