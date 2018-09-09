@@ -23,17 +23,11 @@ client.on("message", async (msg) => {
        
         return member.roles.find("name", roleName);
     }).map(member => {
-       msg.reply(member.user.username)
-        return member.user.username;
+       msg.guild.channels.find("name", "quest-info").sendMessage(member.user.username+" nome da quest")
+        
     })
 
-    let embed = new discord.RichEmbed({
-        "title": `Users with the ${roleName} role`,
-        "description": membersWithRole.join("\n"),
-        "color": 0xFFFF
-    });
-
-    return msg.channel.send({embed});
+  
 }
   
   
