@@ -19,7 +19,7 @@ client.on("message", async (msg) => {
   //----
   
   
-    
+    let envia="1";
 
   
   if(msg.content.startsWith('5ovos')){
@@ -42,14 +42,14 @@ let roleName ="CHANSEY";
     
     
            const embed = new Discord.RichEmbed()
-                .setTitle("POKETSTOP "+pokestop)
-                .setAuthor("Olá, "+member.user+" ", "https://exraidspinhalnovo.webnode.pt/_files/200000044-1157e1263e/450/pstop.png")
+                .setTitle("QUEST - INFORMAÇÃO")
+                .setAuthor(pokestop, "https://exraidspinhalnovo.webnode.pt/_files/200000044-1157e1263e/450/pstop.png")
                 /*
                  * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
                  */
                 .setColor(0x00AE86)
                 .setDescription("CHOCAR 5 OVOS")
-                .setFooter("Pubicado "+msg.author, "https://www.google.com/maps/place/38°38'08.5%22N+8°54'29.2%22W/@38.635691,-8.9098598,17z/data=!3m1!4b1!4m6!3m5!1s0x0:0x0!7e2!8m2!3d38.635691!4d-8.9081074")
+                .setFooter("Pubicado "+msg.author.name, "")
 
 
                 .setThumbnail("https://exraidspinhalnovo.webnode.pt/_files/200000043-cd4a1ce43f/450/chansey.png")
@@ -57,11 +57,15 @@ let roleName ="CHANSEY";
                 .setTimestamp();
 
 
-
+if(envia=="1"){
+      
             msg.guild.channels.find("name", "quest-info").sendMessage({ embed });
+            envia="0";
+}   
+          
          
           
-           // msg.guild.channels.find("name", "quest-info").sendMessage("Notificado: " +member.user);
+            msg.guild.channels.find("name", "quest-info").sendMessage("Notificado: " +member.user);
     
     
   })
