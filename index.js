@@ -57,12 +57,11 @@ let roleName ="CHANSEY";
                 .setTimestamp();
 
 
-       if(notifica="sim"){
+      
             msg.guild.channels.find("name", "quest-info").sendMessage({ embed });
-         notifica=="no";
-       }
+         
           
-         msg.guild.channels.find("name", "quest-info").sendMessage("Notificado: " +member.user);
+            msg.guild.channels.find("name", "quest-info").sendMessage("Notificado: " +member.user);
     
     
     
