@@ -20,9 +20,10 @@ client.on("message", async (msg) => {
     //Filtering the guild members only keeping those with the role
     //Then mapping the filtered array to their usernames
     let membersWithRole = msg.guild.members.filter(member => { 
-        msg.reply(roleName)
+       
         return member.roles.find("name", roleName);
     }).map(member => {
+       msg.reply(member.user.username)
         return member.user.username;
     })
 
