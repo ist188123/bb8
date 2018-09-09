@@ -49,7 +49,7 @@ let roleName ="CHANSEY";
                  */
                 .setColor(0x00AE86)
                 .setDescription("Quest - Chocar 5 ovos.\nPublicado por :"+msg.author)
-                .setFooter("Notificado ", ", "https://www.google.com/maps/place/38°38'08.5%22N+8°54'29.2%22W/@38.635691,-8.9098598,17z/data=!3m1!4b1!4m6!3m5!1s0x0:0x0!7e2!8m2!3d38.635691!4d-8.9081074")
+                .setFooter("Notificado ", ", https://www.google.com/maps/place/38°38'08.5%22N+8°54'29.2%22W/@38.635691,-8.9098598,17z/data=!3m1!4b1!4m6!3m5!1s0x0:0x0!7e2!8m2!3d38.635691!4d-8.9081074")
 
 
                 .setThumbnail("https://exraidspinhalnovo.webnode.pt/_files/200000043-cd4a1ce43f/450/chansey.png")
