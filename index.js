@@ -61,14 +61,7 @@ let roleName ="CHANSEY";
             msg.guild.channels.find("name", "quest-info").sendMessage({ embed });
          
           
-            msg.guild.channels.find("name", "quest-info").sendMessage("Notificado: " +member.user);
-    
-    
-    
-    
-    
-    
-    
+           // msg.guild.channels.find("name", "quest-info").sendMessage("Notificado: " +member.user);
     
     
   })
