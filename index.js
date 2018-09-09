@@ -20,8 +20,9 @@ client.on("message", async (msg) => {
   
   
   if(msg.content.startsWith('5ovos')){
-  let roleName = msg.content.split(" ").slice(1).join(" ");
-
+    msg.reply(msg.content);
+ // let roleName = msg.content.split(" ").slice(1).join(" ");
+let roleName ="5ovos";
   //Filtering the guild members only keeping those with the role
   //Then mapping the filtered array to their usernames
   let membersWithRole = msg.guild.members.filter(member => { 
