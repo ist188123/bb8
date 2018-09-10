@@ -65,7 +65,7 @@ let roleName ="CHANSEY";
                  * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
                  */
                 .setColor(0x00AE86)
-                .setDescription("CHOCAR 5 OVOS\nNotificado:\n"+notif)
+                .setDescription("CHOCAR 5 OVOS - Chansey")
                 .setFooter("Pubicado ", "")
 
 
