@@ -40,9 +40,9 @@ let roleName ="CHANSEY";
     
    
     
-     member.user.send("lkjlkjk");
+    // member.user.send("lkjlkjk");
    
-    
+    msg.sendMessage("dddd");
     
     
     
