@@ -42,7 +42,7 @@ let roleName ="CHANSEY";
     
     // member.user.send("lkjlkjk");
    
-   msg.reply(member.user;
+   msg.reply(member.user);
     
     
     
