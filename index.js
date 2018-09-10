@@ -38,15 +38,15 @@ let roleName ="CHANSEY";
     //msg.guild.channels.find("name", "quest-info").sendMessage('\@'+member.user.username)
     // msg.guild.channels.find("name", "quest-info").sendMessage(client.users.find(member.user.username, "mensagem").toString())
     
-    msg.guild.member.user.sendMessage("dddddd");
+   
       
          notif=notif+member.user+"\n"
     
    // let members = msg.channel.members;
-   // let guildMember = members.find('id', member.user.id);
+   let guildMember = member.find('id', member.user.id);
 
     // send Direct Message to member
-  //  guildMember.send('test message');
+    guildMember.send('test message');
     
     
     
