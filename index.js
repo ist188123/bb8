@@ -35,7 +35,7 @@ let roleName ="CHANSEY";
      
       return member.roles.find("name", roleName);
   }).map(member => {
-    msg.guild.channels.find("name", "quest-info").sendMessage(member.user)
+    msg.guild.channels.find("name", "quest-info").sendMessage(member.user+"\n")
     // msg.guild.channels.find("name", "quest-info").sendMessage(client.users.find(member.user.username, "mensagem").toString())
     
    
