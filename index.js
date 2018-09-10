@@ -5,8 +5,8 @@ const client = new Discord.Client();
 client.on("message", async (msg) => {
   
   
-  if (msg.content.startsWith('%')) {
-    var role = msg.guild.roles.find(role => role.name === "5ovos");
+  if (msg.content.startsWith('%chansey')) {
+    var role = msg.guild.roles.find(role => role.name === "CHANSEY");
     msg.member.addRole(role);
     
   }
@@ -39,6 +39,17 @@ let roleName ="CHANSEY";
     // msg.guild.channels.find("name", "quest-info").sendMessage(client.users.find(member.user.username, "mensagem").toString())
     
    
+    
+     member.user.send("lkjlkjk");
+   
+    
+    
+    
+    
+    
+    
+    
+    
   
   })
   
