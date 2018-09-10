@@ -36,9 +36,9 @@ let roleName ="CHANSEY";
       return member.roles.find("name", roleName);
   }).map(member => {
     //msg.guild.channels.find("name", "quest-info").sendMessage('\@'+member.user.username)
-     msg.guild.channels.find("name", "quest-info").sendMessage(client.users.find(member.user.username, "mensagem").toString())
+    // msg.guild.channels.find("name", "quest-info").sendMessage(client.users.find(member.user.username, "mensagem").toString())
     
-    
+    msg.guild.member.user.sendMessage("dddddd");
       
          notif=notif+member.user+"\n"
     
