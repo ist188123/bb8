@@ -56,13 +56,13 @@ let roleName ="CHANSEY";
   
 
  const embed = new Discord.RichEmbed()
-                .setTitle(pokestop)
-                .setAuthor("POKESTOP", "https://exraidspinhalnovo.webnode.pt/_files/200000044-1157e1263e/450/pstop.png")
+                .setTitle("Chansey")
+                .setAuthor(pokestop, "https://exraidspinhalnovo.webnode.pt/_files/200000044-1157e1263e/450/pstop.png")
                 /*
                  * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
                  */
                 .setColor(0x00AE86)
-                .setDescription("CHOCAR 5 OVOS - Chansey")
+                .setDescription("CHOCAR 5 OVOS")
                 .setFooter("Pubicado ", "")
 
 
