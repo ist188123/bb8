@@ -44,7 +44,7 @@ let roleName ="CHANSEY";
    
  
     
-    //msg.guild.channels.find("name", "quest-info").sendMessage(member.user+" Quest chansey - Pokestop : " +pokestop);
+    msg.guild.channels.find("name", "quest-info").sendMessage(" Quest chansey - Pokestop : " +pokestop);
     
     
     
