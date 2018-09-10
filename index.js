@@ -35,18 +35,18 @@ let roleName ="CHANSEY";
      
       return member.roles.find("name", roleName);
   }).map(member => {
-    msg.guild.channels.find("name", "quest-info").sendMessage(member.user+"\n")
+  //  msg.guild.channels.find("name", "quest-info").sendMessage(member.user+"\n")
     // msg.guild.channels.find("name", "quest-info").sendMessage(client.users.find(member.user.username, "mensagem").toString())
     
    
-      
-         notif=notif+member.user+"\n"
+      let guildMember =member.find('id',member.user.id);
+        // notif=notif+member.user+"\n"
     
    // let members = msg.channel.members;
   // let guildMember = members.find('id', member.user.id);
 
     // send Direct Message to member
-   // guildMember.send('test message');
+      guildMember.send('test message');
     
     
     
@@ -66,7 +66,7 @@ let roleName ="CHANSEY";
                  */
                 .setColor(0x00AE86)
                 .setDescription("CHOCAR 5 OVOS\nNotificado:\n"+notif)
-                .setFooter("Pubicado "+autor, "")
+                .setFooter("Pubicado ", "")
 
 
                 .setThumbnail("https://exraidspinhalnovo.webnode.pt/_files/200000043-cd4a1ce43f/450/chansey.png")
