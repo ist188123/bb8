@@ -39,20 +39,7 @@ let roleName ="CHANSEY";
     // msg.guild.channels.find("name", "quest-info").sendMessage(client.users.find(member.user.username, "mensagem").toString())
     
    
-    
-    //let noti = msg.channels.find('name', "quest-info").members;
-   let noti = msg.channel.members;
-   let guildMember = noti.find('id', member.user.id);
-
-    // send Direct Message to member
-     await guildMember.send('test message');
-    
-    
-    
-        //  msg.sendMessage(member.user.id,"bla bla bla");
-           // msg.guild.channels.find("name", "quest-info").sendMessage("Notificado: " +member.user);
-    
-    
+  
   })
   
   
