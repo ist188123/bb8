@@ -40,13 +40,13 @@ client.on("message", async (msg) => {
   if(msg.content.startsWith('!')){
     
    
-var mensagem=msg.content;
-var msg=mensagem.substr(1)
+
+var mensagem=msg.content.substring(1);
 
  msg.reply("aqui 1");
-let cod=msg.split(" ")[0];
+let cod=mensagem.split(" ")[0];
 
-let pokestop =  msg.split(" ").slice(1).join(" ");
+let pokestop =  mensagem.split(" ").slice(1).join(" ");
 let quest="";
 let missao="";
 let questimagem="";
