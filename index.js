@@ -46,7 +46,7 @@ client.on("message", async (msg) => {
   
    
 
-  
+  if (msg.channel.name == 'quest-lab') {
   if(msg.content.startsWith('!')){
     
    
@@ -133,7 +133,7 @@ let roleName =quest;
   
 }
   
-  
+  }
   //----
   
   
