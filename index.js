@@ -22,7 +22,8 @@ client.on("message", async (msg) => {
  //ADICIONAR REGRAS AOS TREINADORES 
   if (msg.content.startsWith('%')) {
     msg.reply(msg.content.substring(1));
-    var role = msg.guild.roles.find(role => role.name === msg.content.substring(1));
+    var regra=msg.content.substring(1);
+    var role = msg.guild.roles.find(role => role.name === regra);
     msg.member.addRole(role);
     
   }
