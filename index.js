@@ -20,11 +20,13 @@ var tamanhoFicheiro = Object.keys(raids).length;
 client.on("message", async (msg) => {
   
  //ADICIONAR REGRAS AOS TREINADORES 
-  
+ // quest-notificacao
+  if (msg.channel.name == 'buddy-quest-lab') {
+    
   var regra="";
   var role = "";
   if (msg.content.startsWith('+')) {
-    msg.reply("Olá, "+msg.author+"\nVai passar a receber todas as notificações das Quest de "+msg.content.substring(1)+", no canal "+msg.guild.channels.find("name", "quest-notificacao") );
+    msg.send("Olá, "+msg.author+"\nVai passar a receber todas as notificações das Quest de "+msg.content.substring(1)+", no canal "+msg.guild.channels.find("name", "quest-notificacao") );
      regra=msg.content.substring(1).toUpperCase();
      role = msg.guild.roles.find(role => role.name === regra);
     msg.member.addRole(role);
@@ -46,14 +48,14 @@ client.on("message", async (msg) => {
   
    
 
-  if (msg.channel.name == 'quest-lab') {
+ 
   if(msg.content.startsWith('!')){
     
    
 
 var dmsg=msg.content.substring(1);
 
- msg.reply("aqui 1");
+ 
 let cod=dmsg.split(" ")[0];
 
 let pokestop =  dmsg.split(" ").slice(1).join(" ");
@@ -62,7 +64,7 @@ let missao="";
 let questimagem="";
 //ler ficheiro   
     
-      msg.reply("aqui 2");
+    ;
   for (var x = 0; x < tamanhoFicheiro; x++) {
 
   if (cod == raids[x].cod) {
@@ -76,7 +78,7 @@ let questimagem="";
     
     
     
-    msg.reply(quest)
+    
   
     let autor=msg.author;
    
