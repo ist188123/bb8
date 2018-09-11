@@ -39,7 +39,7 @@ client.on("message", async (msg) => {
   
   if(msg.content.startsWith('!')){
     
-    
+    msg.reply("aqui 1");
 var mensagem=msg.content;
 var msg=mensagem.substr(1)
 
@@ -52,7 +52,7 @@ let missao="";
 let questimagem="";
 //ler ficheiro   
     
-    
+      msg.reply("aqui 2");
   for (var x = 0; x < tamanhoFicheiro; x++) {
 
   if (cod == raids[x].cod) {
