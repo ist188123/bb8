@@ -110,7 +110,7 @@ let roleName =quest;
                 .setFooter("Pubicado ", "")
 
 
-                .setThumbnail("https://exraidspinhalnovo.webnode.pt/_files/200000043-cd4a1ce43f/450/chansey.png")
+                .setThumbnail(questimagem)
 
                 .setTimestamp();
   
