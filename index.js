@@ -24,7 +24,7 @@ client.on("message", async (msg) => {
   var regra="";
   var role = "";
   if (msg.content.startsWith('+')) {
-    msg.reply(msg.content.substring(1));
+    msg.reply("Olá, "+msg.author+"\nVai passar a receber todas as notificações das Quest de "+msg.content.substring(1)+", no canal "+msg.guild.channels.find("name", "quest-notificacao") );
      regra=msg.content.substring(1).toUpperCase();
      role = msg.guild.roles.find(role => role.name === regra);
     msg.member.addRole(role);
