@@ -20,13 +20,17 @@ var tamanhoFicheiro = Object.keys(raids).length;
 client.on("message", async (msg) => {
   
  //ADICIONAR REGRAS AOS TREINADORES 
-  if (msg.content.startsWith('%chansey')) {
-    var role = msg.guild.roles.find(role => role.name === "CHANSEY");
+  if (msg.content.startsWith('%')) {
+    var role = msg.guild.roles.find(role => role.name === msg.content.substring(1).toUpperCase());
     msg.member.addRole(role);
     
   }
   
-  
+  if (msg.content.startsWith('-')) {
+    var role = msg.guild.roles.find(role => role.name === msg.content.substring(1).toUpperCase());
+    msg.member.removeRole(role);
+    
+  }
  
   
 // FIM ADICIONAR REGRAS TREINADORES
