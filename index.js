@@ -66,7 +66,7 @@ let questimagem="";
     
     
     
-    msg.reply(missao)
+    msg.reply(quest)
   
   
 }
