@@ -99,25 +99,7 @@ let roleName =quest;
   
   
 
- const embed = new Discord.RichEmbed()
-                .setTitle(quest)
-                .setAuthor(pokestop, "https://exraidspinhalnovo.webnode.pt/_files/200000044-1157e1263e/450/pstop.png")
-                /*
-                 * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
-                 */
-                .setColor(0x00AE86)
-                .setDescription(missao)
-                .setFooter("Pubicado ", "")
-
-
-                .setThumbnail("https://exraidspinhalnovo.webnode.pt/_files/200000043-cd4a1ce43f/450/chansey.png")
-
-                .setTimestamp();
-  
-   msg.guild.channels.find("name", "quest-info").sendMessage({ embed });
-    
-    
-    
+ 
     
     
   
