@@ -21,13 +21,13 @@ client.on("message", async (msg) => {
   
  //ADICIONAR REGRAS AOS TREINADORES 
   if (msg.content.startsWith('%')) {
-    var role = msg.guild.roles.find(role => role.name === msg.content.substring(1).toUpperCase());
+    var role = msg.guild.roles.find(role => role.name === msg.content.substring(1));
     msg.member.addRole(role);
     
   }
   
   if (msg.content.startsWith('-')) {
-    var role = msg.guild.roles.find(role => role.name === msg.content.substring(1).toUpperCase());
+    var role = msg.guild.roles.find(role => role.name === msg.content.substring(1));
     msg.member.removeRole(role);
     
   }
