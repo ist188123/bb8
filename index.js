@@ -23,17 +23,17 @@ client.on("message", async (msg) => {
   
   var regra="";
   var role = "";
-  if (msg.content.startsWith('%')) {
+  if (msg.content.startsWith('+')) {
     msg.reply(msg.content.substring(1));
-     regra=msg.content.substring(1);
+     regra=msg.content.substring(1).toUpperCase();
      role = msg.guild.roles.find(role => role.name === regra);
     msg.member.addRole(role);
     
   }
   
   if (msg.content.startsWith('-')) {
-    regra=msg.content.substring(1);
-     role = msg.guild.roles.find(role => role.name === msg.content.substring(1));
+    regra=msg.content.substring(1).toUpperCase();
+     role = msg.guild.roles.find(role => role.name === regra);
     msg.member.removeRole(role);
     
   }
