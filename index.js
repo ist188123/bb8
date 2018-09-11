@@ -39,11 +39,11 @@ client.on("message", async (msg) => {
   
   if(msg.content.startsWith('!')){
     
-    msg.reply("aqui 1");
+   
 var mensagem=msg.content;
 var msg=mensagem.substr(1)
 
-
+ msg.reply("aqui 1");
 let cod=msg.split(" ")[0];
 
 let pokestop =  msg.split(" ").slice(1).join(" ");
