@@ -41,12 +41,12 @@ client.on("message", async (msg) => {
     
    
 
-var mensagem=msg.content.substring(1);
+var dmsg=msg.content.substring(1);
 
  msg.reply("aqui 1");
-let cod=mensagem.split(" ")[0];
+let cod=dmsg.split(" ")[0];
 
-let pokestop =  mensagem.split(" ").slice(1).join(" ");
+let pokestop =  dmsg.split(" ").slice(1).join(" ");
 let quest="";
 let missao="";
 let questimagem="";
@@ -70,7 +70,7 @@ let questimagem="";
   
     let autor=msg.author;
    
-     let pokestop =  msg.content.split(" ").slice(1).join(" ");
+    
  // let roleName = msg.content.split(" ").slice(1).join(" ");
 let roleName =quest;
   //Filtering the guild members only keeping those with the role
@@ -99,7 +99,25 @@ let roleName =quest;
   
   
 
- 
+ const embed = new Discord.RichEmbed()
+                .setTitle(quest)
+                .setAuthor(pokestop, "https://exraidspinhalnovo.webnode.pt/_files/200000044-1157e1263e/450/pstop.png")
+                /*
+                 * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
+                 */
+                .setColor(0x00AE86)
+                .setDescription(missao)
+                .setFooter("Pubicado ", "")
+
+
+                .setThumbnail("https://exraidspinhalnovo.webnode.pt/_files/200000043-cd4a1ce43f/450/chansey.png")
+
+                .setTimestamp();
+  
+   msg.guild.channels.find("name", "quest-info").sendMessage({ embed });
+    
+    
+    
     
     
   
