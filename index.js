@@ -26,7 +26,9 @@ client.on("message", async (msg) => {
   var regra="";
   var role = "";
   if (msg.content.startsWith('+')) {
-    msg.sendMessage("Olá, "+msg.author+"\nVai passar a receber todas as notificações das Quest de "+msg.content.substring(1)+", no canal "+msg.guild.channels.find("name", "quest-notificacao") );
+    msg.guild.channels.find("name", "buddy-quest-lab").sendMessage("Olá, "+msg.author+"\nAdicionado ás notificações da Quest de "+msg.content.substring(1)+", no canal "+msg.guild.channels.find("name", "quest-notificacao") );
+    
+      
      regra=msg.content.substring(1).toUpperCase();
      role = msg.guild.roles.find(role => role.name === regra);
     msg.member.addRole(role);
@@ -37,7 +39,8 @@ client.on("message", async (msg) => {
     regra=msg.content.substring(1).toUpperCase();
      role = msg.guild.roles.find(role => role.name === regra);
     msg.member.removeRole(role);
-    
+     msg.guild.channels.find("name", "buddy-quest-lab").sendMessage("Olá, "+msg.author+"\nRemovido das notificações da Quest de "+msg.content.substring(1)+", no canal "+msg.guild.channels.find("name", "quest-notificacao") );
+   
   }
  
   
