@@ -68,6 +68,58 @@ let questimagem="";
     
     msg.reply(quest)
   
+    let autor=msg.author;
+   
+     let pokestop =  msg.content.split(" ").slice(1).join(" ");
+ // let roleName = msg.content.split(" ").slice(1).join(" ");
+let roleName =quest;
+  //Filtering the guild members only keeping those with the role
+  //Then mapping the filtered array to their usernames
+  let membersWithRole = msg.guild.members.filter(member => { 
+     
+      return member.roles.find("name", roleName);
+  }).map(member => {
+  //  msg.guild.channels.find("name", "quest-info").sendMessage(member.user+"\n")
+    // msg.guild.channels.find("name", "quest-info").sendMessage(client.users.find(member.user.username, "mensagem").toString())
+    
+   
+    
+    // member.user.send("lkjlkjk");
+   
+ 
+    
+    msg.guild.channels.find("name", "quest-notificacao").sendMessage(member.user+" Quest "+quest+" - Pokestop : " +pokestop);
+    
+    
+    
+    
+    
+  
+  })
+  
+  
+
+ const embed = new Discord.RichEmbed()
+                .setTitle(quest)
+                .setAuthor(pokestop, "https://exraidspinhalnovo.webnode.pt/_files/200000044-1157e1263e/450/pstop.png")
+                /*
+                 * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
+                 */
+                .setColor(0x00AE86)
+                .setDescription(missao)
+                .setFooter("Pubicado ", "")
+
+
+                .setThumbnail("https://exraidspinhalnovo.webnode.pt/_files/200000043-cd4a1ce43f/450/chansey.png")
+
+                .setTimestamp();
+  
+   msg.guild.channels.find("name", "quest-info").sendMessage({ embed });
+    
+    
+    
+    
+    
   
 }
   
