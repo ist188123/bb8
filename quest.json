@@ -30,6 +30,12 @@
         "quest": "SILVER",
         "missao": "Apanhar 5 Pokemons de fogo.",
         "questimagem": "https://exraidspinhalnovo.webnode.pt/_files/200000048-ebbc1ecc00/450/silver.png"
+   },
+    {
+        "cod": "charmander",
+        "quest": "CHARMANDER",
+        "missao": "Power up 5 vezes.",
+        "questimagem": "https://exraidspinhalnovo.webnode.pt/_files/200000049-3e0cc3f074/450/charmander.png"
    }
 
 ]
