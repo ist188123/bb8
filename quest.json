@@ -36,6 +36,13 @@
         "quest": "CHARMANDER",
         "missao": "Power up 5 vezes.",
         "questimagem": "https://exraidspinhalnovo.webnode.pt/_files/200000049-3e0cc3f074/450/charmander.png"
+   },
+    {
+        "cod": "larvitar",
+        "quest": "LARVITAR",
+        "missao": "3 excelentes seguidos.",
+        "questimagem": "https://exraidspinhalnovo.webnode.pt/_files/200000051-6ea996fa83/200/larvitar.png"
    }
+    
 
 ]
