@@ -11,7 +11,7 @@
         "cod": "machop",
         "quest": "MACHOP",
         "missao": "Ganhar 5 batalhas em ginásios",
-        "questimagem": "https://exraidspinhalnovo.webnode.pt/_files/200000045-311d632243/450/machop.png"
+        "questimagem": "https://exraidspinhalnovo.webnode.pt/_files/200000055-4ffbe50f62/450/show.png"
    },
    {
         "cod": "spinda",
@@ -43,6 +43,19 @@
         "missao": "3 excelentes seguidos.",
         "questimagem": "https://exraidspinhalnovo.webnode.pt/_files/200000051-6ea996fa83/200/larvitar.png"
    }
-    
+    ,
+    {
+        "cod": "rare1",
+        "quest": "RARE1",
+        "missao": "Missão ?",
+        "questimagem": "https://exraidspinhalnovo.webnode.pt/_files/200000056-f0502f14c8/450/rare.png"
+   }
+    ,
+    {
+        "cod": "rare3",
+        "quest": "RARE3",
+        "missao": "Missão ?",
+        "questimagem": "https://exraidspinhalnovo.webnode.pt/_files/200000056-f0502f14c8/450/rare.png"
+   }
 
 ]
