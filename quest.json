@@ -57,5 +57,12 @@
         "missao": "Missão ?",
         "questimagem": "https://exraidspinhalnovo.webnode.pt/_files/200000056-f0502f14c8/450/rare.png"
    }
+    ,
+    {
+        "cod": "stardust",
+        "quest": "STARDUST",
+        "missao": "Missão ?",
+        "questimagem": "https://exraidspinhalnovo.webnode.pt/_files/200000058-b21dcb3180/450/stardust.png"
+   }
 
 ]
