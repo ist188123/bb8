@@ -54,9 +54,12 @@ if (msg.content.startsWith('!')) {
                 questMap = JSON.parse(data);
         
                  for (var x = 0; x < questMap.length; x++) {
-    msg.sendMessage(questMap[x].cod)
+  //  msg.sendMessage(questMap[x].cod)
                   
-        
+        msg.channel.send({embed: {
+  color: 3447003,
+  description: "A very simple Embed!"
+}});
     
        
     
