@@ -90,12 +90,13 @@ if (msg.content.startsWith('!quest')) {
 
 
    if (msg.content.startsWith('!quem')) { 
+     
+     msg.reply(msg.channel.name);
+     
    msg.guild.channels.find("name", channel.name).fetchMessages({ limit: 100 }).then(msg => {
   msg.forEach(msg => {
     
-     msg.channel.send({embed: {
-  color: 3447003,
-  description:  msg.author
+   msg.reply(msg.channel.name);
        
 }});   
     
