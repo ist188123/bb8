@@ -25,7 +25,7 @@ client.on("message", async (msg) => {
   //---------------------------------------------------		
   
 //quest
-if (msg.content.startsWith('!')) {
+if (msg.content.startsWith('!quest')) {
 
         //mensagem --
               
@@ -96,7 +96,13 @@ if (msg.content.startsWith('!')) {
   //fim criar canal----
 
 
-
+if (msg.content.startsWith('!ajuda')) {
+    msg.channel.send({embed: {
+  color: 3447003,
+  description: "COMANDOS DO MRS.BOSS\n\n!ajuda\nComandos do bot\n!quest\nLista de todas as quest.\n!# ginasio !hora raid tempo\n# nivel raid 5,4,3\n hora 12h00\ntempo\n12 ainda com ovo faltam 12 miutos abrir\n-12 aberta a 12 minutos"
+}});   
+  
+}
 
 
 
