@@ -35,15 +35,7 @@ if (msg.content.startsWith('!quest')) {
           
           var endereco='http://pnraidspn.atwebpages.com/teste.php'
     
-          var dmsg = msg.content.substring(1);
-    
-    
-          let cod = dmsg.split(" ")[0];
-    
-          let pokestop = dmsg.split(" ").slice(1).join(" ");
-          let quest = "";
-          let missao = "";
-          let questimagem = "";
+          
       
       let req = http.get(endereco, function(res) {
             let data = '',
@@ -62,7 +54,7 @@ if (msg.content.startsWith('!quest')) {
                  for (var x = 0; x < questMap.length; x++) {
   //  msg.sendMessage(questMap[x].cod)
                   
-       pppp=pppp+"*"+questMap[x].cod+"*\n"+questMap[x].missao+"\n"
+       pppp=pppp+"**"+questMap[x].cod+"**\n"+questMap[x].missao+"\n"
        
     
     
