@@ -57,7 +57,20 @@ if (msg.content.startsWith('!')) {
         
               
               //-------------------------------------
-              msg.channel.send({embed: {
+            var pppp="";
+        //-------------------------------------       
+                 for (var x = 0; x < questMap.length; x++) {
+  //  msg.sendMessage(questMap[x].cod)
+                  
+       pppp=pppp+questMap[x].cod+"\n"
+       
+    
+    
+    }
+              
+      
+              
+        msg.channel.send({embed: {
     color: 3447003,
     author: {
       name: client.user.username,
@@ -66,26 +79,13 @@ if (msg.content.startsWith('!')) {
     title: "QUEST ATIVAS",
     url: "http://google.com",
     description: "Lista.",
-    fields: [
-        //-------------------------------------       
-                 for (var x = 0; x < questMap.length; x++) {
-  //  msg.sendMessage(questMap[x].cod)
-                  
-        {
-        name: questMap[x].cod,
-        value: questMap[x].cod
-      },
-       
-    
-    
-    }
+    fields: [        
               
-       
      
      
       {
         name: "Fim",
-        value: "Listagem de quests."
+        value: pppp
       }
     ],
     timestamp: new Date(),
