@@ -826,7 +826,7 @@ if (msg.content.startsWith('!')) {
         
                  for (var x = 0; x < questMap.length; x++) {
     
-                    
+                   msg.guild.channels.find("name", "quest").sendMessage(questMap[x].cod);  
     
         if (!msg.content.startsWith('!quest')) {
     
