@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
-var resposta = require('./resposta.json');
+var resposta = require('./quest.json');
 const client = new Discord.Client();
-var jsonData = require('./raidspn.json');
+var jsonData = require('./quest.json');
 const prefix = "+";
 const http = require('http');
 
