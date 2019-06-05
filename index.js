@@ -875,7 +875,7 @@ if (msg.content.startsWith('!')) {
     
         }//!fim lista quest
     
-        msg.guild.channels.find("name", "quest").sendMessage("MENSAGEM DE LISTA QUEST"); 
+        //msg.guild.channels.find("name", "quest").sendMessage("MENSAGEM DE LISTA QUEST"); 
     
     
     }
