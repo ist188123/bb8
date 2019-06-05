@@ -755,7 +755,7 @@ if (msg.content.startsWith('!')) {
        
     //---------------  
         
-    if (!msg.content.startsWith('!quest')) {
+    
     
     var pkendereco='http://pnraidspn.atwebpages.com/poketstop.php'
     //var jsonData = require('./raidspn.json');
@@ -798,7 +798,7 @@ if (msg.content.startsWith('!')) {
         });
     
     
-    }
+    
           
         //----------------  
           
@@ -827,7 +827,7 @@ if (msg.content.startsWith('!')) {
                  for (var x = 0; x < questMap.length; x++) {
     msg.sendMessage(questMap[x].cod)
                   
-        if (!msg.content.startsWith('!quest')) {
+        
     
             if (cod == questMap[x].cod) {
               quest = questMap[x].quest;
@@ -873,9 +873,9 @@ if (msg.content.startsWith('!')) {
              
             }
     
-        }//!fim lista quest
+        
     
-        //msg.guild.channels.find("name", "quest").sendMessage("MENSAGEM DE LISTA QUEST"); 
+       
     
     
     }
@@ -1019,3 +1019,8 @@ if (msg.content.startsWith('!')) {
 });
 
 client.login(process.env.BOT_TOKEN);
+
+
+
+
+
