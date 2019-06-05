@@ -89,6 +89,23 @@ if (msg.content.startsWith('!quest')) {
   //fim criar canal----
 
 
+   if (msg.content.startsWith('!quem')) { 
+   msg.guild.channels.find("name", channel.name).fetchMessages({ limit: 100 }).then(msg => {
+  msg.forEach(msg => {
+    
+     msg.channel.send({embed: {
+  color: 3447003,
+  description:  msg.author
+       
+}});   
+    
+  })
+
+
+})
+             
+   }  
+    
 if (msg.content.startsWith('!ajuda')) {
     msg.channel.send({embed: {
   color: 3447003,
