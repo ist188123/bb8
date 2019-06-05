@@ -825,9 +825,8 @@ if (msg.content.startsWith('!')) {
                 questMap = JSON.parse(data);
         
                  for (var x = 0; x < questMap.length; x++) {
-    
-                   msg.guild.channels.find("name", "quest").sendMessage(questMap[x].cod);  
-    
+    msg.sendMessage(questMap[x].cod)
+                  
         if (!msg.content.startsWith('!quest')) {
     
             if (cod == questMap[x].cod) {
@@ -1020,8 +1019,3 @@ if (msg.content.startsWith('!')) {
 });
 
 client.login(process.env.BOT_TOKEN);
-
-
-
-
-
