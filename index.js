@@ -27,7 +27,9 @@ client.on("message", async (msg) => {
 //quest
 if (msg.content.startsWith('!')) {
 
-       
+        //mensagem --
+              
+    
    
         //----------------  
           
@@ -53,20 +55,48 @@ if (msg.content.startsWith('!')) {
             res.on('end', function() {
                 questMap = JSON.parse(data);
         
+              
+              //-------------------------------------
+              msg.channel.send({embed: {
+    color: 3447003,
+    author: {
+      name: client.user.username,
+      icon_url: client.user.avatarURL
+    },
+    title: "QUEST ATIVAS",
+    url: "http://google.com",
+    description: "Lista.",
+    fields: [
+        //-------------------------------------       
                  for (var x = 0; x < questMap.length; x++) {
   //  msg.sendMessage(questMap[x].cod)
                   
-        msg.channel.send({embed: {
-  color: 3447003,
-  description: "A very simple Embed!"
-}});
-    
+        {
+        name: questMap[x].cod,
+        value: questMap[x].cod
+      },
        
     
     
     }
-    
-                
+              
+       
+     
+     
+      {
+        name: "Fim",
+        value: "Listagem de quests."
+      }
+    ],
+    timestamp: new Date(),
+    footer: {
+      icon_url: client.user.avatarURL,
+      text: "© Example"
+    }
+  }
+});
+        msg.channel.send({embed});
+        //fim mensagem --        
             });
         });
        //----fim quest 
