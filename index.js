@@ -25,6 +25,7 @@ client.on("message", async (msg) => {
   //---------------------------------------------------		
   
 //quest
+  if (msg.channel.name == '💬-chat-geral') {
 if (msg.content.startsWith('!quest')) {
 
         //mensagem --
@@ -97,7 +98,7 @@ if (msg.content.startsWith('!ajuda')) {
 }
 
 
-
+  }
 
   //--- fim teste ----
 
