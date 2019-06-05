@@ -69,33 +69,11 @@ if (msg.content.startsWith('!')) {
     }
               
       
-              
-        msg.channel.send({embed: {
-    color: 3447003,
-    author: {
-      name: client.user.username,
-      icon_url: client.user.avatarURL
-    },
-    title: "QUEST ATIVAS",
-    url: "http://google.com",
-    description: "Lista.",
-    fields: [        
-              
-     
-     
-      {
-        name: "Fim",
-        value: pppp
-      }
-    ],
-    timestamp: new Date(),
-    footer: {
-      icon_url: client.user.avatarURL,
-      text: "© Example"
-    }
-  }
-});
-        msg.channel.send({embed});
+    
+       message.channel.send({embed: {
+  color: 3447003,
+  description: "A very simple Embed!"
+}});   
         //fim mensagem --        
             });
         });
