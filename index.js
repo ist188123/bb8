@@ -89,21 +89,14 @@ if (msg.content.startsWith('!quest')) {
   //fim criar canal----
 
 
-   if (msg.content.startsWith('!quem')) { 
+   if (msg.content.startsWith('!a')) { 
      
-     msg.reply(msg.channel.name);
-     
-   msg.guild.channels.find("name", channel.name).fetchMessages({ limit: 100 }).then(msg => {
-  msg.forEach(msg => {
-    
-   msg.reply(msg.channel.name);
-       
+   msg.channel.send({embed: {
+  color: 3447003,
+  description: "**RAID ANUNCIO**"
 }});   
-    
-  })
-
-
-})
+     
+     
              
    }  
     
