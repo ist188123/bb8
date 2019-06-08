@@ -55,7 +55,7 @@ if (msg.content.startsWith('!quest')) {
                  for (var x = 0; x < questMap.length; x++) {
   //  msg.sendMessage(questMap[x].cod)
                   
-       pppp=pppp+"**"+questMap[x].cod+"**\n"+questMap[x].missao+"\n"
+       pppp=pppp+"<:pkst:585903628817137785>"+questMap[x].cod+"\n"+questMap[x].missao+"\n"
        
     
     
@@ -65,7 +65,7 @@ if (msg.content.startsWith('!quest')) {
     
        msg.channel.send({embed: {
   color: 3447003,
-  description: "<:pkst:585903397983748099> QUEST DISPONIVEIS\n"+pppp
+  description: "QUEST DISPONIVEIS\n"+pppp
 }});   
         //fim mensagem --        
             });
