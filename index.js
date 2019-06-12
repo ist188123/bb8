@@ -65,7 +65,7 @@ if (msg.content.startsWith('!quest')) {
     
        msg.channel.send({embed: {
   color: 3447003,
-  description: "QUEST DISPONIVEIS\n"
+  description: "QUEST DISPONIVEIS\n"+pppp
 }});   
         //fim mensagem --        
             });
