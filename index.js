@@ -169,11 +169,11 @@ var local = "";
 
     //console.log(today.getHours() + ":" + today.getMinutes())
 
-    console.log("Anuncio : ",add_minutes(date, 0))
+   // console.log("Anuncio : ",add_minutes(date, 0))
    var fecha=add_minutes(date, 45+ parseInt(tempo))
    
-    console.log("Abre : ",hora)
-    console.log("Fecha : ",add_minutes(date, 45+ parseInt(tempo)))	   
+   // console.log("Abre : ",hora)
+    //console.log("Fecha : ",add_minutes(date, 45+ parseInt(tempo)))	   
 	   
 	 msg.channel.send({embed: {
   color: 3447003,
