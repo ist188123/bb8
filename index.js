@@ -176,12 +176,31 @@ if (msg.content.startsWith('!quest')) {
     // console.log("Abre : ",hora)
     //console.log("Fecha : ",add_minutes(date, 45+ parseInt(tempo)))	   
 
-    msg.channel.send({
-        embed: {
-            color: 3447003,
-            description: "COMANDOS DO MRS.BOSS"
-        }
-    });
+    const exampleEmbed = new Discord.RichEmbed()
+	.setColor('#0099ff')
+	.setTitle('ANÚNCIO RAID')
+	.setURL('https://discord.js.org/')
+	.setAuthor('PoGoRaids', ovo, 'https://discord.js.org')
+	.setDescription('Some description here')
+	.setThumbnail('https://i.imgur.com/wSTFkRM.png')
+	.addField('Regular field title', 'Some value here')
+	.addBlankField()
+	.addField('Inline field title', 'Some value here', true)
+	.addField('Inline field title', 'Some value here', true)
+	.addField('Inline field title', 'Some value here', true)
+	.setImage('https://i.imgur.com/wSTFkRM.png')
+	.setTimestamp()
+	.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
+
+msg.channel.send(exampleEmbed);
+    
+    
+    
+    
+    
+    
+    
+    
 
 
 }  
@@ -208,8 +227,3 @@ if (msg.content.startsWith('!ajuda')) {
 });
 
 client.login(process.env.BOT_TOKEN);
-
-
-
-
-
