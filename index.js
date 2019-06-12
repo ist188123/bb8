@@ -51,7 +51,32 @@ if (msg.content.startsWith('!quest')) {
               
               //-------------------------------------
             var pppp="";
-        //-------------------------------------       
+        //-------------------------------------    
+              
+             //------
+              
+              const exampleEmbed = new Discord.RichEmbed()
+	.setColor('#0099ff')
+	.setTitle('Some title')
+	.setURL('https://discord.js.org/')
+	.setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
+	.setDescription('Some description here')
+	.setThumbnail('https://i.imgur.com/wSTFkRM.png')
+	.addField('Regular field title', 'Some value here')
+	.addBlankField()
+	.addField('Inline field title', 'Some value here', true)
+	.addField('Inline field title', 'Some value here', true)
+	.addField('Inline field title', 'Some value here', true)
+	.setImage('https://i.imgur.com/wSTFkRM.png')
+	.setTimestamp()
+	.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
+
+              
+              
+           //-----   
+              
+              
+              
                  for (var x = 0; x < questMap.length; x++) {
   //  msg.sendMessage(questMap[x].cod)
                   
@@ -61,13 +86,14 @@ if (msg.content.startsWith('!quest')) {
     
     }
               
-      
+      msg.channel.send(exampleEmbed);
     
-       msg.channel.send({embed: {
-  color: 3447003,
-  description: "QUEST DISPONIVEIS\n"+pppp
-}});   
-        //fim mensagem --        
+  //     msg.channel.send({embed: {
+//  color: 3447003,
+//  description: "QUEST DISPONIVEIS\n"+pppp
+//}});   
+              
+    //fim mensagem --        
             });
         });
        //----fim quest 
