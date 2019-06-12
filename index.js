@@ -114,19 +114,20 @@ if (msg.content.startsWith('!quest')) {
   //fim criar canal----
 
 
-   if (msg.content.startsWith('!i')) { 
-     
-	 var today = new Date();
-var tiporaid = "";
-var tempo = "";
-var local = "";  
-	tiporaid = msg.split(" ")[1]
+   if (msg.content.startsWith('!i')) {
+    var msginfo = msg.content;
+
+    var today = new Date();
+    var tiporaid = "";
+    var tempo = "";
+    var local = "";
+    tiporaid = msginfo.split(" ")[1]
 
     //tempo falta
-    tempo = msg.split(" ")[msg.split(" ").length - 1]
+    tempo = msginfo.split(" ")[msginfo.split(" ").length - 1]
 
-    for (x = 2; x < msg.split(" ").length - 1; x++) {
-        local = local + msg.split(" ")[x] + " "
+    for (x = 2; x < msginfo.split(" ").length - 1; x++) {
+        local = local + msginfo.split(" ")[x] + " "
     }
 
 
@@ -135,15 +136,15 @@ var local = "";
 
 
 
-    
+
 
 
     switch (tiporaid) {
         case "1":
-        ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
+            ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
 
         case "2":
-        ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
+            ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
 
 
         case "3":
@@ -160,28 +161,30 @@ var local = "";
             break;
     }
 
-   
+
 
     var date = new Date();
 
-    var hora=add_minutes(date, tempo);
+    var hora = add_minutes(date, tempo);
 
 
     //console.log(today.getHours() + ":" + today.getMinutes())
 
-   // console.log("Anuncio : ",add_minutes(date, 0))
-   var fecha=add_minutes(date, 45+ parseInt(tempo))
-   
-   // console.log("Abre : ",hora)
+    // console.log("Anuncio : ",add_minutes(date, 0))
+    var fecha = add_minutes(date, 45 + parseInt(tempo))
+
+    // console.log("Abre : ",hora)
     //console.log("Fecha : ",add_minutes(date, 45+ parseInt(tempo)))	   
-	   
-	 msg.channel.send({embed: {
-  color: 3447003,
-  description: "COMANDOS DO MRS.BOSS"
-}});   
-	   
-	
-   }  
+
+    msg.channel.send({
+        embed: {
+            color: 3447003,
+            description: "COMANDOS DO MRS.BOSS"
+        }
+    });
+
+
+}  
 	  
 	  
 	  
