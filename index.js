@@ -66,7 +66,7 @@ if (msg.content.startsWith('!quest')) {
                  for (var x = 0; x < questMap.length; x++) {
   //  msg.sendMessage(questMap[x].cod)
                   
-       pppp=pppp+questMap[x].cod+"\n"+questMap[x].missao.trim()+"\n"
+       pppp=pppp+"**"+questMap[x].cod+"**\n"+questMap[x].missao.trim()+"\n"
        
     
     
