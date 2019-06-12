@@ -9,7 +9,20 @@ const http = require('http');
 //console.log(tamanhoFicheiro)
 
 
+var add_minutes = function (dt, minutes) {
+    var d = new Date(dt.getTime() + minutes * 60000),
+        dformat = [mzero(d.getHours()),
+        mzero(d.getMinutes())].join(':');
 
+    return dformat;
+}
+
+var mzero = function (mzero) {
+    if (mzero < 10) {
+        mzero = "0" + mzero
+    }
+    return mzero;
+}
 
 
 
@@ -103,14 +116,91 @@ if (msg.content.startsWith('!quest')) {
 
    if (msg.content.startsWith('!a')) { 
      
-   msg.channel.send({embed: {
-  color: 3447003,
-  description: "**RAID ANUNCIO**"
-}});   
-     
-     
-             
+	 var today = new Date();
+var tiporaid = "";
+var tempo = "";
+var local = "";  
+	tiporaid = msg.split(" ")[1]
+
+    //tempo falta
+    tempo = msg.split(" ")[msg.split(" ").length - 1]
+
+    for (x = 2; x < msg.split(" ").length - 1; x++) {
+        local = local + msg.split(" ")[x] + " "
+    }
+
+
+
+
+
+
+
+    
+
+
+    switch (tiporaid) {
+        case "1":
+        ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
+
+        case "2":
+        ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
+
+
+        case "3":
+            ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
+
+            break;
+        case "4":
+            ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
+
+            break;
+        case "5":
+            ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000019-4d5f84e5ec/200/Egg_Raid_Legendary.png";
+
+            break;
+    }
+
+   
+
+    var date = new Date();
+
+    var hora=add_minutes(date, tempo);
+
+
+    //console.log(today.getHours() + ":" + today.getMinutes())
+
+    console.log("Anuncio : ",add_minutes(date, 0))
+   var fecha=add_minutes(date, 45+ parseInt(tempo))
+   
+    console.log("Abre : ",hora)
+    console.log("Fecha : ",add_minutes(date, 45+ parseInt(tempo)))	   
+	   
+	
+	   
+	const exampleEmbed = new Discord.RichEmbed()
+	.setColor('#0099ff')
+	.setTitle('Anunico RAID '+tiporaid)
+	.setURL('https://discord.js.org/')
+	.setAuthor('Some name', ovo)
+	.setDescription('Some description here')
+	.setThumbnail(ovo)
+	.addField(local, 'Some value here')
+	.addBlankField()
+	.addField(hora, 'Some value here', true)
+	.addField(fecha, 'Some value here', true)
+	
+	
+	.setTimestamp()
+	.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');   
+	   
+	      
    }  
+	  
+	  
+	  
+	  
+	  
+	  
     
 if (msg.content.startsWith('!ajuda')) {
     msg.channel.send({embed: {
