@@ -76,7 +76,7 @@ if (msg.content.startsWith('!quest')) {
     
      msg.channel.send({embed: {
  color: 3447003,
- description: "QUEST DISPONIVEIS\n"+pppp
+ description: "**QUEST DISPONIVEIS**\n\n"+pppp+"\n\n__Publicar Quest__\nno canal #professor-boss \n!chansey Natalia Correira"
 }});   
               
     //fim mensagem --        
