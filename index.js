@@ -175,25 +175,12 @@ var local = "";
     console.log("Abre : ",hora)
     console.log("Fecha : ",add_minutes(date, 45+ parseInt(tempo)))	   
 	   
-	
+	 msg.channel.send({embed: {
+  color: 3447003,
+  description: "COMANDOS DO MRS.BOSS"
+}});   
 	   
-	const exampleEmbed = new Discord.RichEmbed()
-	.setColor('#0099ff')
-	.setTitle('Anunico RAID '+tiporaid)
-	.setURL('https://discord.js.org/')
-	.setAuthor('Some name', ovo)
-	.setDescription('Some description here')
-	.setThumbnail(ovo)
-	.addField(local, 'Some value here')
-	.addBlankField()
-	.addField(hora, 'Some value here', true)
-	.addField(fecha, 'Some value here', true)
 	
-	
-	.setTimestamp()
-	.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');   
-	 msg.channel.send(exampleEmbed);  
-	      
    }  
 	  
 	  
