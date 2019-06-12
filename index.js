@@ -114,7 +114,7 @@ if (msg.content.startsWith('!quest')) {
   //fim criar canal----
 
 
-   if (msg.content.startsWith('!a')) { 
+   if (msg.content.startsWith('!i')) { 
      
 	 var today = new Date();
 var tiporaid = "";
