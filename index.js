@@ -65,7 +65,7 @@ if (msg.content.startsWith('!quest')) {
     
        msg.channel.send({embed: {
   color: 3447003,
-  description: "QUEST DISPONIVEIS\n"+pppp
+  description: "QUEST DISPONIVEIS\n"+pppp+"\n\n__Partilhar QUEST__\nno canal #professor-boss \n!chansey Natália Correia"
 }});   
         //fim mensagem --        
             });
