@@ -61,15 +61,9 @@ if (msg.content.startsWith('!quest')) {
 	.setURL('https://discord.js.org/')
 	.setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
 	.setDescription('Some description here')
-	.setThumbnail('https://i.imgur.com/wSTFkRM.png')
-	.addField('Regular field title', 'Some value here')
-	.addBlankField()
-	.addField('Inline field title', 'Some value here', true)
-	.addField('Inline field title', 'Some value here', true)
-	.addField('Inline field title', 'Some value here', true)
-	.setImage('https://i.imgur.com/wSTFkRM.png')
-	.setTimestamp()
-	.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
+	
+	
+	
 
               
               
@@ -82,10 +76,16 @@ if (msg.content.startsWith('!quest')) {
                   
        pppp=pppp+questMap[x].cod+"\n"+questMap[x].missao.trim()+"\n"
        
-    
+    .setThumbnail('https://i.imgur.com/wSTFkRM.png')
+	.addField('Regular field title', 'Some value here')
+	.addBlankField()
+	.addField('Inline field title', 'Some value here', true)
+	.addField('Inline field title', 'Some value here', true)
+	.addField('Inline field title', 'Some value here', true)
     
     }
-              
+       .setTimestamp()
+	.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');       
       msg.channel.send(exampleEmbed);
     
   //     msg.channel.send({embed: {
