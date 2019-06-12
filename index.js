@@ -192,7 +192,7 @@ var local = "";
 	
 	.setTimestamp()
 	.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');   
-	   
+	 msg.channel.send(exampleEmbed);  
 	      
    }  
 	  
