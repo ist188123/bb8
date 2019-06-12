@@ -116,7 +116,7 @@ if (msg.content.startsWith('!quest')) {
 
    if (msg.content.startsWith('!i')) {
     var msginfo = msg.content;
-
+var ovo="https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
     var today = new Date();
     var tiporaid = "";
     var tempo = "";
@@ -180,7 +180,7 @@ if (msg.content.startsWith('!quest')) {
 	.setColor('#0099ff')
 	.setTitle('Some title')
 	.setURL('https://discord.js.org/')
-	.setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
+	.setAuthor('Some name', ovo, 'https://discord.js.org')
 	.setDescription('Some description here')
 	.setThumbnail('https://i.imgur.com/wSTFkRM.png')
 	.addField('Regular field title', 'Some value here')
@@ -188,7 +188,6 @@ if (msg.content.startsWith('!quest')) {
 	.addField('Inline field title', 'Some value here', true)
 	.addField('Inline field title', 'Some value here', true)
 	.addField('Inline field title', 'Some value here', true)
-	.setImage('https://i.imgur.com/wSTFkRM.png')
 	.setTimestamp()
 	.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
 
