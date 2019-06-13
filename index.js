@@ -31,7 +31,92 @@ var mzero = function (mzero) {
 
 client.on("message", async (msg) => {
   
+//---------------------------------------------------		
+  //nest
+  //---------------------------------------------------		
+  
+	
+	
+	
+//---------------------------------------------------		
+  //fim nest
+  //---------------------------------------------------		
+  	 if (msg.channel.name == 'professor-boss') {
+		 
+		 if (msg.content.startsWith('!nest')) {
+		 
+		 var msginfo = msg.content
+		
+var find=msginfo.split(" ")[1].toLocaleLowerCase()
+var conta=msginfo.split(" ")[0].length+msginfo.split(" ")[1].length
+var onde = msginfo.substring(conta+1,msginfo.length).trim().toLocaleUpperCase()
 
+	//----------------  
+	  var cp=""
+      var nest='http://pnraidspn.atwebpages.com/nest.php'
+      
+     
+  let req = http.get(nest, function(res) {
+        let data = '',
+            questMap;
+    
+        res.on('data', function(stream) {
+            data += stream;
+        });
+        res.on('end', function() {
+            questMap = JSON.parse(data);
+            
+            x=0;
+            
+            
+            
+            var output = questMap.filter(function(xx){return xx.boss==find});
+            
+           var imagem="";
+           var pokemon="";
+           var pokemonTipo=""
+
+            output.forEach(item => {
+              // Do something with item
+              imagem=item.imagem
+              pokemon=item.boss
+              pokemonTipo=item.bosstipo
+             
+              item.nivel.forEach(nivel => {
+                cp=cp+"\n"+nivel
+                
+             })
+
+          })
+
+		//mensagem
+	const nestmensagem = new Discord.RichEmbed()
+	.setColor('#FF0000')
+	.setTitle(' ')
+	.setURL('https://discord.js.org/')
+	.setAuthor('Ninho de '+pokemon.toLocaleUpperCase(), imagem, 'https://discord.js.org')
+	.setThumbnail(imagem)
+	.addField('Local', onde)
+	//.addBlankField()
+	.addField('CP IV (100%)', cp, true)
+	.setTimestamp()
+	.setFooter('Reportado por : '+msg.author.username, 'https://exraidspinhalnovo.webnode.pt/_files/200000022-231042409e/200/damasc010.png');
+
+msg.channel.send(nestmensagem);
+		//fim mensagem
+          
+      });
+
+
+    });
+
+
+    	 
+			 
+			 
+		 }
+	 }
+	
 
  //---------------------------------------------------		
   //QUEST
