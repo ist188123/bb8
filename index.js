@@ -101,10 +101,10 @@ var onde = msginfo.substring(conta+1,msginfo.length).trim().toLocaleUpperCase()
 	.addField('CP IV (100%)', cp, true)
 	.setTimestamp()
 	.setFooter('Reportado por : '+msg.author.username, 'https://exraidspinhalnovo.webnode.pt/_files/200000022-231042409e/200/damasc010.png');
-
-
-      msg.guild.channels.find("name", "nest").sendMessage("\@everyone");
-      msg.guild.channels.find("name", "nest").sendMessage({ nestmensagem });
+      
+      msg.channels.find('name', "nest").send("\@everyone")
+      msg.channels.find('name', "nest").send({ nestmensagem })
+      
 		//fim mensagem
           
       });
