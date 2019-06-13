@@ -34,13 +34,7 @@ client.on("message", async (msg) => {
 //---------------------------------------------------		
   //nest
   //---------------------------------------------------		
-  
-	
-	
-	
-//---------------------------------------------------		
-  //fim nest
-  //---------------------------------------------------		
+  	
   	 if (msg.channel.name == 'professor-boss') {
 		 
 		 if (msg.content.startsWith('!nest')) {
@@ -92,7 +86,7 @@ var onde = msginfo.substring(conta+1,msginfo.length).trim().toLocaleUpperCase()
 		//mensagem
 	const nestmensagem = new Discord.RichEmbed()
 	.setColor('#FF0000')
-	.setTitle(pokemonTipo)
+	.setTitle(' ')
 	.setURL('https://discord.js.org/')
 	.setAuthor('Ninho de '+pokemon.toLocaleUpperCase(), imagem, 'https://discord.js.org')
 	.setThumbnail(imagem)
@@ -102,9 +96,9 @@ var onde = msginfo.substring(conta+1,msginfo.length).trim().toLocaleUpperCase()
 	.setTimestamp()
 	.setFooter('Reportado por : '+msg.author.username, 'https://exraidspinhalnovo.webnode.pt/_files/200000022-231042409e/200/damasc010.png');
       
-      //msg.channels.find('name', "nest").send("\@everyone")
-     // msg.channels.find('name', "nest").send({ nestmensagem })
-      msg.channel.send(nestmensagem);
+      msg.channels.find('name', "nest").send("\@everyone")
+     msg.channels.find('name', "nest").send({ nestmensagem })
+     // msg.channel.send(nestmensagem);
 		//fim mensagem
           
       });
@@ -119,7 +113,14 @@ var onde = msginfo.substring(conta+1,msginfo.length).trim().toLocaleUpperCase()
 		 }
 	 }
 	
-
+	
+//---------------------------------------------------		
+  //fim nest
+  //---------------------------------------------------	
+	
+	
+	
+	
  //---------------------------------------------------		
   //QUEST
   //---------------------------------------------------		
