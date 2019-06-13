@@ -184,9 +184,9 @@ var ovo="https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.
 	.setDescription('Informação de avistamento de RAID, os treinadores que pretendam marcar, devem ir ao canal #professor-boss')
 	.setThumbnail(ovo)
 	.addField(local, 'dd ')
-	.addBlankField()
-	.addField('Abre :'+hora, 'ddd ', true)
-	.addField('Termina : '+ fecha, 'ddd ', true)
+	//.addBlankField()
+	.addField('Aberta das, '+hora, ' ' , false)
+	.addField('Termina às, '+fecha, ' ', true)
 	.setTimestamp()
 	.setFooter('Anunciado por : '+msg.author.username, 'https://i.imgur.com/wSTFkRM.png');
 
