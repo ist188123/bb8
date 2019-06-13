@@ -185,8 +185,8 @@ var ovo="https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.
 	.setThumbnail(ovo)
 	.addField(local, 'dd ')
 	//.addBlankField()
-	.addField('Aberta das, '+hora, ' ' , false)
-	.addField('Termina às, '+fecha, ' ', true)
+	.addField('Aberta das, ', "**"+hora+"**" , true)
+	.addField('Termina às, ', "**"+fecha+"**", true)
 	.setTimestamp()
 	.setFooter('Anunciado por : '+msg.author.username, 'https://i.imgur.com/wSTFkRM.png');
 
