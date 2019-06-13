@@ -102,7 +102,9 @@ var onde = msginfo.substring(conta+1,msginfo.length).trim().toLocaleUpperCase()
 	.setTimestamp()
 	.setFooter('Reportado por : '+msg.author.username, 'https://exraidspinhalnovo.webnode.pt/_files/200000022-231042409e/200/damasc010.png');
 
-msg.channel.send(nestmensagem);
+
+      msg.guild.channels.find("name", "nest").sendMessage("\@everyone");
+      msg.guild.channels.find("name", "nest").sendMessage({ nestmensagem });
 		//fim mensagem
           
       });
