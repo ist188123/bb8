@@ -85,25 +85,20 @@ var onde = msginfo.substring(conta+1,msginfo.length).trim().toLocaleUpperCase()
 
 		//mensagem
 	const nestmensagem = new Discord.RichEmbed()
-	.setColor('#0099ff')
-	.setTitle('Some title')
+	.setColor('#FF0000')
+	.setTitle('reporte de ninho')
 	.setURL('https://discord.js.org/')
-	.setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
-	.setDescription('Some description here')
-	.setThumbnail('https://i.imgur.com/wSTFkRM.png')
-	.addField('Regular field title', 'Some value here')
-	.addBlankField()
-	.addField('Inline field title', 'Some value here', true)
-	.addField('Inline field title', 'Some value here', true)
-	.addField('Inline field title', 'Some value here', true)
-	.setImage('https://i.imgur.com/wSTFkRM.png')
+	.setAuthor('Ninho de '+pokemon.toLocaleUpperCase(), imagem, 'https://discord.js.org')
+	.setThumbnail(imagem)
+	.addField('Local', onde)
+	//.addBlankField()
+	.addField('CP IV (100%)', cp, true)
 	.setTimestamp()
-	.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
-
-     // msg.channels.find('name', "nest").send("\@everyone")
-  //   msg.channels.find('name', "nest").send({ nestmensagem })
+	.setFooter('Reportado por : '+msg.author.username, 'https://exraidspinhalnovo.webnode.pt/_files/200000022-231042409e/200/damasc010.png');
+    msg.channels.find('name', "nest").send("\@everyone")
+    msg.channels.find('name', "nest").send({ nestmensagem })
       
-		msg.channel.send(nestmensagem);
+		//msg.channel.send(nestmensagem);
 		//fim mensagem
           
       });
