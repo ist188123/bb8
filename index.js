@@ -278,8 +278,8 @@ var ovo="https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.
 	.addField('Termina', "**"+fecha+"**", true)
 	.setTimestamp()
 	.setFooter('Anunciado por : '+msg.author.username, 'https://i.imgur.com/wSTFkRM.png');
+        msg.guild.channels.find("name", "nest").sendMessage(exampleEmbed); 
 
-msg.channel.send(exampleEmbed);
     
     
     
