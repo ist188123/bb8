@@ -87,7 +87,7 @@ var onde = msginfo.substring(conta+1,msginfo.length).trim().toLocaleUpperCase()
 		//mensagem
 	const nestmensagem = new Discord.RichEmbed()
 	.setColor('#FF0000')
-	.setTitle('\@everyone Reporte de ninho '+hoje)
+	.setTitle('Reporte de ninho '+hoje)
 	.setURL('https://discord.js.org/')
 	.setAuthor('Ninho de '+pokemon.toLocaleUpperCase(), imagem, 'https://discord.js.org')
 	.setThumbnail(imagem)
