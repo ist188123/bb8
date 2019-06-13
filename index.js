@@ -11,7 +11,7 @@ const http = require('http');
 
 var add_minutes = function (dt, minutes) {
     var d = new Date(dt.getTime() + minutes * 60000),
-        dformat = [mzero(d.getHours()),
+        dformat = [mzero(d.getUTCHours()+1),
         mzero(d.getMinutes())].join(':');
 
     return dformat;
@@ -277,7 +277,7 @@ var ovo="https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.
 	.addField('Abre', "**"+hora+"**" , true)
 	.addField('Termina', "**"+fecha+"**", true)
 	.setTimestamp()
-	.setFooter('Anunciado por : '+msg.author.username, 'https://i.imgur.com/wSTFkRM.png');
+	.setFooter('Anunciado por : '+msg.author.username, 'https://exraidspinhalnovo.webnode.pt/_files/200000022-231042409e/200/damasc010.png');
         msg.guild.channels.find("name", "info-raids").sendMessage(raidinfomsg); 
 
 }  
