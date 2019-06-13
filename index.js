@@ -266,7 +266,7 @@ var ovo="https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.
     // console.log("Abre : ",hora)
     //console.log("Fecha : ",add_minutes(date, 45+ parseInt(tempo)))	   
 
-   const exampleEmbed = new Discord.RichEmbed()
+   const raidinfomsg = new Discord.RichEmbed()
 	.setColor('#FF0000')
 	.setTitle(' ')
 	.setURL('https://discord.js.org/')
@@ -278,17 +278,7 @@ var ovo="https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.
 	.addField('Termina', "**"+fecha+"**", true)
 	.setTimestamp()
 	.setFooter('Anunciado por : '+msg.author.username, 'https://i.imgur.com/wSTFkRM.png');
-        msg.guild.channels.find("name", "nest").sendMessage(exampleEmbed); 
-
-    
-    
-    
-    
-    
-    
-    
-    
-
+        msg.guild.channels.find("name", "info-raids").sendMessage(raidinfomsg); 
 
 }  
 	  
