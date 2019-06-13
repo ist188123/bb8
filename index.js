@@ -40,7 +40,8 @@ client.on("message", async (msg) => {
 		 if (msg.content.startsWith('!nest')) {
 		 
 		 var msginfo = msg.content
-		
+var dia = new Date();
+var hoje=dia.getDate()+"-"+dia.getMonth()+"-"+dia.getFullYear();	
 var find=msginfo.split(" ")[1].toLocaleLowerCase()
 var conta=msginfo.split(" ")[0].length+msginfo.split(" ")[1].length
 var onde = msginfo.substring(conta+1,msginfo.length).trim().toLocaleUpperCase()
@@ -86,7 +87,7 @@ var onde = msginfo.substring(conta+1,msginfo.length).trim().toLocaleUpperCase()
 		//mensagem
 	const nestmensagem = new Discord.RichEmbed()
 	.setColor('#FF0000')
-	.setTitle('reporte de ninho')
+	.setTitle('\@everyone Reporte de ninho '+hoje)
 	.setURL('https://discord.js.org/')
 	.setAuthor('Ninho de '+pokemon.toLocaleUpperCase(), imagem, 'https://discord.js.org')
 	.setThumbnail(imagem)
