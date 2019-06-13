@@ -96,7 +96,7 @@ var onde = msginfo.substring(conta+1,msginfo.length).trim().toLocaleUpperCase()
 	.setTimestamp()
 	.setFooter('Reportado por : '+msg.author.username, 'https://exraidspinhalnovo.webnode.pt/_files/200000022-231042409e/200/damasc010.png');
     client.channels.find('name', "nest").send("\@everyone")
- client.channels.find('name', "nest").send({ nestmensagem })
+ client.channels.find('name', "nest").send(nestmensagem)
       
 	//msg.channel.send(nestmensagem);
 		//fim mensagem
