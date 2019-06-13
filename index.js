@@ -178,7 +178,7 @@ var ovo="https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.
 
    const exampleEmbed = new Discord.RichEmbed()
 	.setColor('#0099ff')
-	.setTitle('Informação ')
+	.setTitle(' ')
 	.setURL('https://discord.js.org/')
 	.setAuthor('ANUNCIO RAID '+tiporaid, ovo, 'https://discord.js.org')
 	.setDescription('Anunciado por :')
@@ -188,7 +188,7 @@ var ovo="https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.
 	.addField(hora, 'Some value here', true)
 	.addField(fecha, 'Some value here', true)
 	.setTimestamp()
-	.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
+	.setFooter('Anunciado por : '+msg.author.username, 'https://i.imgur.com/wSTFkRM.png');
 
 msg.channel.send(exampleEmbed);
     
