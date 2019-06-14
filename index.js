@@ -356,7 +356,7 @@ if(isNaN(tempo)){
     msg.channel.send({
                 embed: {
                     color: 3447003,
-                    description: "ATENÇÃO:\nFalta o tempo da raid exemplo:\n!i tyra piscinas 22"
+                    description: "ATENÇÃO:\nFalta o **tempo** da raid exemplo:\n!i tyra piscinas **22**"
                 }
             });
    
