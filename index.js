@@ -258,7 +258,7 @@ var raid='http://pnraidspn.atwebpages.com/raid.php'
 
             })
            //------------------------------
-           
+         setTimeout(function () {  
 
          switch (tiporaid) {
             case "1":
@@ -297,7 +297,7 @@ var raid='http://pnraidspn.atwebpages.com/raid.php'
 
 
    
-setTimeout(function () {
+
 
         var date = new Date();
         
@@ -326,7 +326,7 @@ setTimeout(function () {
 	      
  });//leinforaid	      
 	      
-	 }, 1500);      
+	 }, 2000);      
 	      
 	      
 }  
