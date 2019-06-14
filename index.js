@@ -340,7 +340,7 @@ client.on("message", async (msg) => {
               msg.channel.send({
                 embed: {
                     color: 3447003,
-                    description: "ATENÇÃO:\nFalta o **nivel** da raid exemplo:\n!i **1** piscinas 22\n\nOu o Pokemon "+boss+" não está carregado"
+                    description: "ATENÇÃO:\nFalta o **nivel** da raid exemplo:\n!i **1** piscinas 22\n\nOu o Pokemon "+tiporaid+" não está carregado"
                 }
             });
           
