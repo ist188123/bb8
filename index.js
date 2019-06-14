@@ -9,6 +9,9 @@ const http = require('http');
 //console.log(tamanhoFicheiro)
 
 
+//-------------------------
+//funcoes -----
+//-------------------------
 var add_minutes = function (dt, minutes) {
     var d = new Date(dt.getTime() + minutes * 60000),
         dformat = [mzero(d.getUTCHours() + 1),
@@ -24,38 +27,37 @@ var mzero = function (mzero) {
     return mzero;
 }
 
+//var pCode='http://pnraidspn.atwebpages.com/raid.php'
+function leinforaid(pCode, cb) {  //leraud
 
-var pCode='http://pnraidspn.atwebpages.com/raid.php'
-function leinforaid(cb) {  //leraud
-   http.request(pCode).on('response', function(response) {
-              var data = '';
-              response.on("data", function (chunk) {
-                  data += chunk;
-              });
-              response.on('end', function () {
-                  var pCJSON = JSON.parse(data);
-                    cb(pCJSON);
-                 
-              });
-              }).end();
-      }
-      
-      async function listaraids() {
-    
-        var lista="";
-          var result = await leinforaid(async function(pCLatLng) { 
-              pCLatLng.forEach(nivel => {
-               lista=lista +  "Raid "+nivel.nivel+" - "+nivel.boss+"\n"
-                 })
-      msg.channel.send({
-                embed: {
-                    color: 3447003,
-                    description: "Raids carregadas:\n"+lista
-                }
-            });
-                 
-              })
-          }
+    http.request(pCode).on('response', function (response) {
+        var data = '';
+        response.on("data", function (chunk) {
+            data += chunk;
+        });
+        response.on('end', function () {
+            var pCJSON = JSON.parse(data);
+            cb(pCJSON);
+
+        });
+    }).end();
+}
+
+async function listaraids(endereco) {
+
+    var lista = "";
+    var result = await leinforaid(endereco, async function (pCLatLng) {
+        pCLatLng.forEach(nivel => {
+            lista = lista + "Raid " + nivel.nivel + " - " + nivel.boss + "\n"
+        })
+
+        console.log(lista)
+    })
+}
+
+//-------------------------
+//fim funcoes -----
+//-------------------------
 
 
 
@@ -243,90 +245,100 @@ client.on("message", async (msg) => {
         if (msg.content.startsWith('!i')) {
             var msginfo = msg.content;
 
+var today = new Date();
 
 
-            var boss = "";
-            var ovo = "";
-            var today = new Date();
-            var tiporaid = "";
-            var tempo = "";
-            var local = "";
 
-            tiporaid = msginfo.split(" ")[1]
+    var boss = ""
+    var ovo = ""
+    var tiporaid = "";
+    var tempo = "";
+    var local = "";
+
+    //nivel raid
+    tiporaid = msg.split(" ")[1]
+
+    //tempo falta
+    tempo = msg.split(" ")[msg.split(" ").length - 1]
 
 
-            //tempo falta
-            tempo = msginfo.split(" ")[msginfo.split(" ").length - 1]
 
-            for (x = 2; x < msginfo.split(" ").length - 1; x++) {
-                local = local + msginfo.split(" ")[x] + " "
+
+
+    for (x = 2; x < msg.split(" ").length - 1; x++) {
+        local = local + msg.split(" ")[x] + " "
+    }
+    async function informaraid(tiporaid,endereco) {
+
+
+        var ispokemon = isNaN(tiporaid);
+        console.log("--ispokemon--->", ispokemon)
+        if (ispokemon) {
+            tempo = -tempo
+            console.log(tempo)
+        }
+        var result = await leinforaid(endereco,async function (pCLatLng) {
+            pCLatLng.forEach(nivel => {
+                if (ispokemon) {
+
+                    if (nivel.boss == tiporaid) {
+                        tiporaid = nivel.nivel;
+                        boss = nivel.imagem;
+
+                    }
+
+                } else {
+                    if (nivel.nivel == tiporaid) {
+                        tiporaid = nivel.nivel;
+                        boss = "";
+                    }
+
+                }
+
+
+            })
+
+
+            //------------------------------
+
+
+            switch (tiporaid) {
+                case "1":
+                    ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
+                    break;
+                case "2":
+                    ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
+                    break;
+
+                case "3":
+                    ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
+
+                    break;
+                case "4":
+                    ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
+
+                    break;
+                case "5":
+                    ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000019-4d5f84e5ec/200/Egg_Raid_Legendary.png";
+
+                    break;
+
+            }
+
+            //se não tiver boss então mostra a imagem do ovo
+            if (boss == "") {
+                boss = ovo;
+
             }
 
 
-            async function informaraid(tiporaid) {
-             var ispokemon = isNaN(tiporaid);
-               if(ispokemon){
-                    tempo=-tempo
-                }
-                var result = await leinforaid(async function (pCLatLng) {
-                    pCLatLng.forEach(nivel => {
-                        if (ispokemon) {
-                            if (nivel.boss == tiporaid) {
-                                tiporaid = nivel.nivel;
-                                boss = nivel.imagem;
+            if (typeof parseInt(tiporaid) == "number" && tiporaid.trim() != "") {
 
+                var date = new Date();
 
-                            }
-
-                        } else {
-                            if (nivel.nivel == tiporaid) {
-                                tiporaid = nivel.nivel;
-                                boss = "";
-                            }
-
-                        }
-
-
-                    })
-
-
-                    //------------------------------
-
-
-                    switch (tiporaid) {
-                        case "1":
-                            ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
-                            break;
-                        case "2":
-                            ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
-                            break;
-
-                        case "3":
-                            ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
-
-                            break;
-                        case "4":
-                            ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
-
-                            break;
-                        case "5":
-                            ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000019-4d5f84e5ec/200/Egg_Raid_Legendary.png";
-
-                            break;
-                    }
-
-                    //se não tiver boss então mostra a imagem do ovo
-                    if (boss == "") {
-                        boss = ovo;
-
-                    }
-
-             if(typeof tiporaid == "number" ){
-                    var date = new Date();
-
-                    var horaatual = add_minutes(date, 0)
-                    var hora = add_minutes(date, tempo);
-                    var fecha = add_minutes(date, 45 + parseInt(tempo))
+                var horaatual = add_minutes(date, 0)
+                var hora = add_minutes(date, tempo);
+                var fecha = add_minutes(date, 45 + parseInt(tempo))
 
 
 
@@ -368,7 +380,7 @@ if(isNaN(tempo)){
             });
    
 }else{
- informaraid(tiporaid)
+   informaraid(tiporaid,'http://pnraidspn.atwebpages.com/raid.php')
 }
           
  }
@@ -393,10 +405,10 @@ if(isNaN(tempo)){
         }
 
         
-        
-        if (msg.content.startsWith('!listar')) {
-            listaraids()
-        }
+    if (msg.startsWith("!listar")) {
+    listaraids('http://pnraidspn.atwebpages.com/raid.php')
+
+}
         
         
 
