@@ -258,7 +258,9 @@ client.on("message", async (msg) => {
 
 
                 var ispokemon = isNaN(tiporaid);
-
+               if(ispokemon){
+                    tempo=-tempo
+                }
                 var result = await leinforaid(async function (pCLatLng) {
                     pCLatLng.forEach(nivel => {
                         if (ispokemon) {
@@ -342,8 +344,18 @@ client.on("message", async (msg) => {
 
             }
 
-
-            informaraid(tiporaid);
+if(isNaN(tempo)){
+    msg.channel.send({
+                embed: {
+                    color: 3447003,
+                    description: "ATENÇÃO:\nFalta o tempo da raid exemplo:\n!i tyra piscinas 22"
+                }
+            });
+   
+}else{
+ informaraid(tiporaid)
+}
+          
 
 
 
