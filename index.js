@@ -206,7 +206,8 @@ if (msg.content.startsWith('!quest')) {
 
    if (msg.content.startsWith('!i')) {
     var msginfo = msg.content;
-var ovo="https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
+	   var boss="";
+var ovo="";
     var today = new Date();
     var tiporaid = "";
     var tempo = "";
@@ -221,57 +222,97 @@ var ovo="https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.
     }
 
 
+var raid='http://pnraidspn.atwebpages.com/raid.php'
+     function leinforaid(cb) {  //leraud
+                var pCode='http://pnraidspn.atwebpages.com/raid.php'
+                
+            
+                http.request(pCode).on('response', function(response) {
+                    var data = '';
+                    response.on("data", function (chunk) {
+                        data += chunk;
+                    });
+                    response.on('end', function () {
+                        var pCJSON = JSON.parse(data);
+                          cb(pCJSON);
+                       
+                    });
+                    }).end();
+            }
+            
 
+          
+          
+          
+          
+          
+      leinforaid( function(pCLatLng) { 
+           
+           var output = pCLatLng.filter(function(xx){return xx.pokemon==tiporaid});
+           
 
+           output.forEach(nivel => {
+            tiporaid = nivel.nivel
+           boss=nivel.imagem
+           
 
+            })
+           //------------------------------
+           
 
-
-
-
-
-    switch (tiporaid) {
-        case "1":
+         switch (tiporaid) {
+            case "1":
             ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
-
-        case "2":
-            ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
-
-
-        case "3":
-            ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
-
             break;
-        case "4":
+            case "2":
             ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
-
             break;
-        case "5":
-            ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000019-4d5f84e5ec/200/Egg_Raid_Legendary.png";
+    
+            case "3":
+                ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
+    
+                break;
+            case "4":
+                ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
+    
+                break;
+            case "5":
+                ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000019-4d5f84e5ec/200/Egg_Raid_Legendary.png";
+    
+                break;
+        }
+    
+        //se não tiver boss então mostra a imagem do ovo
+        if(boss==""){
+            boss=ovo;
 
-            break;
-    }
+        }
+       
+    
 
 
 
-    var date = new Date();
-
-    var hora = add_minutes(date, tempo);
 
 
-    //console.log(today.getHours() + ":" + today.getMinutes())
 
-    // console.log("Anuncio : ",add_minutes(date, 0))
-    var fecha = add_minutes(date, 45 + parseInt(tempo))
 
-    // console.log("Abre : ",hora)
-    //console.log("Fecha : ",add_minutes(date, 45+ parseInt(tempo)))	   
+   
+
+
+        var date = new Date();
+        
+        var horaatual=add_minutes(date, 0)
+        var hora=add_minutes(date, tempo);
+       var fecha = add_minutes(date, 45+ parseInt(tempo))
+
+    
 
    const raidinfomsg = new Discord.RichEmbed()
 	.setColor('#FF0000')
-	.setTitle(' ')
+	.setTitle(horaatual)
 	.setURL('https://discord.js.org/')
 	.setAuthor('ANUNCIO RAID '+tiporaid, ovo, 'https://discord.js.org')
-	.setThumbnail(ovo)
+	.setThumbnail(boss)
 	.addField('Ginásio', local)
 	//.addBlankField()
 	.addField('Abre', "**"+hora+"**" , true)
@@ -280,6 +321,14 @@ var ovo="https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.
 	.setFooter('Anunciado por : '+msg.author.username, 'https://exraidspinhalnovo.webnode.pt/_files/200000022-231042409e/200/damasc010.png');
         msg.guild.channels.find("name", "info-raids").sendMessage(raidinfomsg); 
 
+	      
+	      
+	      
+ });//leinforaid	      
+	      
+	      
+	      
+	      
 }  
 	  
 	  
