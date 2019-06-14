@@ -43,6 +43,10 @@ function leinforaid(pCode, cb) {  //leraud
     }).end();
 }
 
+
+client.on("message", async (msg) => {
+
+
 async function listaraids(endereco) {
 
     var lista = "";
@@ -50,8 +54,13 @@ async function listaraids(endereco) {
         pCLatLng.forEach(nivel => {
             lista = lista + "Raid " + nivel.nivel + " - " + nivel.boss + "\n"
         })
-
-        console.log(lista)
+     msg.channel.send({
+                embed: {
+                    color: 3447003,
+                    description: "Raids disponiveis\n"+lista
+                }
+            });
+        
     })
 }
 
@@ -62,7 +71,7 @@ async function listaraids(endereco) {
 
 
 
-client.on("message", async (msg) => {
+
 
     //---------------------------------------------------		
     //nest
