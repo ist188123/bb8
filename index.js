@@ -256,9 +256,9 @@ var raid='http://pnraidspn.atwebpages.com/raid.php'
            boss=nivel.imagem
            
 
-            })
+           
            //------------------------------
-         setTimeout(function () {  
+        
 
          switch (tiporaid) {
             case "1":
@@ -322,11 +322,11 @@ var raid='http://pnraidspn.atwebpages.com/raid.php'
         msg.guild.channels.find("name", "info-raids").sendMessage(raidinfomsg); 
 
 	      
-	      
+ })	      
 	      
  });//leinforaid	      
 	      
-	 }, 2000);      
+	   
 	      
 	      
 }  
