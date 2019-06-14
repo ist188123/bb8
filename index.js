@@ -205,6 +205,9 @@ client.on("message", async (msg) => {
 
         //fim criar canal----
 
+             //---------------------------------------------------		
+            // informa raid
+            //---------------------------------------------------		
 
         if (msg.content.startsWith('!i')) {
             var msginfo = msg.content;
@@ -364,11 +367,11 @@ if(isNaN(tempo)){
  informaraid(tiporaid)
 }
           
+ }
 
-
-
-        }
-
+             //---------------------------------------------------		
+            // fim informa raid
+            //---------------------------------------------------		
 
 
 
@@ -385,8 +388,35 @@ if(isNaN(tempo)){
 
         }
 
+        
+        
+        
+        async function listaraids() {
+    
+  var lista="";
+    var result = await leinforaid(async function(pCLatLng) { 
+        pCLatLng.forEach(nivel => {
+         lista=lista +  "Raid "+nivel.nivel+" - "+nivel.boss+"\n"
+           })
+msg.channel.send({
+                embed: {
+                    color: 3447003,
+                    description: "Raids carregadas\n"+lista;
+                }
+            });
+           
+        })
+    }
+        
+        
+        
+        if (msg.content.startsWith('!listar')) {
+            listaraids()
+        }
+        
+        
 
-    }//fim boss
+    }//fim canal boss
 
     //--- fim teste ----
 
