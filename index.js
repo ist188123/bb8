@@ -261,6 +261,10 @@ if (msg.content.startsWith('!quest')) {
                         if(nivel.pokemon==tiporaid){
                             tiporaid=nivel.nivel;
                             boss=nivel.imagem;
+				msg.channel.send({embed: {
+  color: 3447003,
+  description:"--boss - "+ boss
+}});  
                         }
                     
                        }else{
@@ -309,7 +313,7 @@ if (msg.content.startsWith('!quest')) {
     
 msg.channel.send({embed: {
   color: 3447003,
-  description:"--- "+ boss
+  description:"--ovo - "+ ovo
 }});  
 
 
@@ -348,7 +352,11 @@ msg.channel.send({embed: {
   });//leinforaid	      
 	      
 }
-	      
+	
+	   msg.channel.send({embed: {
+  color: 3447003,
+  description: "tiporaid ="+ tiporaid
+}}); 
 informaraid(tiporaid); 	      
       
 	      
