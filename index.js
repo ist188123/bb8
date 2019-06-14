@@ -229,6 +229,87 @@ if (msg.channel.name == 'professor-boss') {
     
     
     
+    
+if (mensagem.startsWith('!nest')) {
+    var dia = new Date();
+    var hoje = dia.getDate() + "-" + dia.getMonth() + "-" + dia.getFullYear();
+    var find = mensagem.split(" ")[1].toLocaleLowerCase()
+    var conta = mensagem.split(" ")[0].length + mensagem.split(" ")[1].length
+    var onde = mensagem.substring(conta + 1, mensagem.length).trim().toLocaleUpperCase()
+    
+    async function getNest(endereco,qualPokemon) {
+        var cp=""
+        var lista = "";
+        var achou=false;
+        var pokemon="";
+        var imagem="";
+        var result = await leinforaid(endereco, async function (pCLatLng) {
+            pCLatLng.forEach(nivel => {
+                if(nivel.boss==qualPokemon){
+                    achou=true;
+                    cp="";
+                    pokemon=nivel.boss;
+                    imagem=nivel.imagem;
+                nivel.nivel.forEach(nivel => {
+                    cp = cp + "\n" + nivel
+                   
+                })
+                
+            }
+            })
+           if(achou){
+            //mensagem
+               const nestmensagem = new Discord.RichEmbed()
+                .setColor('#FF0000')
+                .setTitle('Reporte de ninho ' + hoje)
+                .setURL('https://discord.js.org/')
+                .setAuthor('Ninho de ' + pokemon.toLocaleUpperCase(), imagem, 'https://discord.js.org')
+                .setThumbnail(imagem)
+                .addField('Local', onde)
+                //.addBlankField()
+                .addField('CP IV (100%)', cp, true)
+                .setTimestamp()
+                .setFooter('Reportado por : ' + msg.author.username, 'https://exraidspinhalnovo.webnode.pt/_files/200000022-231042409e/200/damasc010.png');
+
+            msg.guild.channels.find("name", "nest").sendMessage("\@everyone");
+            msg.guild.channels.find("name", "nest").sendMessage(nestmensagem);
+ 
+              //fim mensagem 
+           }else{
+                 msg.channel.send({
+                    embed: {
+                        color: 3447003,
+                        description: "O pokemon "+find+" não está carregado!"
+                    }
+                });
+           }
+            
+        })
+    }
+    
+    getNest('http://pnraidspn.atwebpages.com/nest.php',find)
+
+}//fim !nest----
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }//FIM CANAL PROFESSOR BOSS   
     
 });
