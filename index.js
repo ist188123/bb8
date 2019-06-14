@@ -206,6 +206,10 @@ if (msg.content.startsWith('!quest')) {
 
    if (msg.content.startsWith('!i')) {
     var msginfo = msg.content;
+	   msg.channel.send({embed: {
+  color: 3447003,
+  description:"--- "+ msginfo
+}});  
 	   var boss="";
 var ovo="";
     var today = new Date();
@@ -247,7 +251,7 @@ var ovo="";
           
           
       
-         async function informaraid() {
+         async function informaraid(tiporaid) {
     
            var result = await leinforaid(function(pCLatLng) { 
            
@@ -335,7 +339,7 @@ msg.channel.send({embed: {
 	      
 }
 	      
-informaraid(); 	      
+informaraid(tiporaid); 	      
       
 	      
 	      
