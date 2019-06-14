@@ -246,16 +246,16 @@ var raid='http://pnraidspn.atwebpages.com/raid.php'
           
           
           
-      leinforaid( function(pCLatLng) { 
+       leinforaid(async function(pCLatLng) { 
            
-           var output = pCLatLng.filter(function(xx){return xx.pokemon==tiporaid});
+           var output = pCLatLng.filter(await function(xx){return xx.pokemon==tiporaid});
            
 
            output.forEach(nivel => {
             tiporaid = nivel.nivel
            boss=nivel.imagem
            
-
+           })	
            
            //------------------------------
         
@@ -322,7 +322,7 @@ var raid='http://pnraidspn.atwebpages.com/raid.php'
         msg.guild.channels.find("name", "info-raids").sendMessage(raidinfomsg); 
 
 	      
- })	      
+       
 	      
  });//leinforaid	      
 	      
