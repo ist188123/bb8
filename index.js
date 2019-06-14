@@ -254,7 +254,7 @@ var raid='http://pnraidspn.atwebpages.com/raid.php'
            var output = pCLatLng.filter(async function(xx){return   xx.pokemon==tiporaid});
            
 
-           await output.forEach(nivel => {
+            output.forEach(nivel => {
             tiporaid = nivel.nivel
            boss=nivel.imagem
            
@@ -327,11 +327,14 @@ var raid='http://pnraidspn.atwebpages.com/raid.php'
 	      
        
 	      
- });//leinforaid	      
+  });//leinforaid	      
 	      
-	   
+}
 	      
 informaraid(); 	      
+      
+	      
+	      
 }  
 	  
 	  
