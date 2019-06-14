@@ -253,17 +253,28 @@ var ovo="";
       
          async function informaraid(tiporaid) {
     
-           var result = await leinforaid(function(pCLatLng) { 
            
-           var output = pCLatLng.filter(async function(xx){return   xx.pokemon==tiporaid});
-           
+                var ispokemon=isNaN(tiporaid);
 
-            output.forEach(nivel => {
-            tiporaid = nivel.nivel
-            boss=nivel.imagem
+                var result = await leinforaid(async function(pCLatLng) { 
+                    pCLatLng.forEach(nivel => {
+                       if(ispokemon){
+                        if(nivel.pokemon==tiporaid){
+                            tiporaid=nivel.nivel;
+                            boss=nivel.imagem;
+                        }
+                    
+                       }else{
+                        if(nivel.nivel==tiporaid){
+                            tiporaid=nivel.nivel;
+                            boss="";
+                        }
 
-           
-           })	
+                       }
+
+                        
+                       })
+
         
            //------------------------------
         
