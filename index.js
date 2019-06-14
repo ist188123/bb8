@@ -25,6 +25,32 @@ var mzero = function (mzero) {
 }
 
 
+var pCode='http://pnraidspn.atwebpages.com/raid.php'
+function leinforaid(cb) {  //leraud
+   http.request(pCode).on('response', function(response) {
+              var data = '';
+              response.on("data", function (chunk) {
+                  data += chunk;
+              });
+              response.on('end', function () {
+                  var pCJSON = JSON.parse(data);
+                    cb(pCJSON);
+                 
+              });
+              }).end();
+      }
+      
+      async function listaraids() {
+    
+        var lista="";
+          var result = await leinforaid(async function(pCLatLng) { 
+              pCLatLng.forEach(nivel => {
+               lista=lista +  "Raid "+nivel.nivel+" - "+nivel.boss+"\n"
+                 })
+      
+                 console.log(lista)
+              })
+          }
 
 
 
@@ -232,35 +258,8 @@ client.on("message", async (msg) => {
             }
 
 
-
-            function leinforaid(cb) {  //leraud
-                var pCode = 'http://pnraidspn.atwebpages.com/raid.php'
-
-
-                http.request(pCode).on('response', function (response) {
-                    var data = '';
-                    response.on("data", function (chunk) {
-                        data += chunk;
-                    });
-                    response.on('end', function () {
-                        var pCJSON = JSON.parse(data);
-                        cb(pCJSON);
-
-                    });
-                }).end();
-            }
-
-
-
-
-
-
-
-
             async function informaraid(tiporaid) {
-
-
-                var ispokemon = isNaN(tiporaid);
+             var ispokemon = isNaN(tiporaid);
                if(ispokemon){
                     tempo=-tempo
                 }
@@ -388,26 +387,6 @@ if(isNaN(tempo)){
 
         }
 
-        
-        
-        
-        async function listaraids() {
-    
-  var lista="";
-    var result = await leinforaid(async function(pCLatLng) { 
-        pCLatLng.forEach(nivel => {
-         lista=lista +  "Raid "+nivel.nivel+" - "+nivel.boss+"\n"
-           })
-msg.channel.send({
-                embed: {
-                    color: 3447003,
-                    description: "Raids carregadas\n"+lista;
-                }
-            });
-           
-        })
-    }
-        
         
         
         if (msg.content.startsWith('!listar')) {
