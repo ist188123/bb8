@@ -247,7 +247,9 @@ var raid='http://pnraidspn.atwebpages.com/raid.php'
           
           
       
-           leinforaid(async function(pCLatLng) { 
+         async function informaraid() {
+    
+           var result = await leinforaid(function(pCLatLng) { 
            
            var output = pCLatLng.filter(async function(xx){return   xx.pokemon==tiporaid});
            
@@ -329,7 +331,7 @@ var raid='http://pnraidspn.atwebpages.com/raid.php'
 	      
 	   
 	      
-	      
+informaraid(); 	      
 }  
 	  
 	  
