@@ -243,6 +243,7 @@ if (mensagem.startsWith('!nest')) {
         var achou=false;
         var pokemon="";
         var imagem="";
+        var tipo="";
         var result = await leinforaid(endereco, async function (pCLatLng) {
             pCLatLng.forEach(nivel => {
                 if(nivel.boss==qualPokemon){
@@ -250,6 +251,7 @@ if (mensagem.startsWith('!nest')) {
                     cp="";
                     pokemon=nivel.boss;
                     imagem=nivel.imagem;
+                    tipo=nivel.bosstipo
                 nivel.nivel.forEach(nivel => {
                     cp = cp + "\n" + nivel
                    
@@ -265,13 +267,14 @@ if (mensagem.startsWith('!nest')) {
                 .setURL('https://discord.js.org/')
                 .setAuthor('Ninho de ' + pokemon.toLocaleUpperCase(), imagem, 'https://discord.js.org')
                 .setThumbnail(imagem)
-                .addField('Local', onde)
+                .addField('Local', "\@everyone\n"+onde)
+               .addField('Tipo', tipo )
                 //.addBlankField()
                 .addField('CP IV (100%)', cp, true)
                 .setTimestamp()
                 .setFooter('Reportado por : ' + msg.author.username, 'https://exraidspinhalnovo.webnode.pt/_files/200000022-231042409e/200/damasc010.png');
 
-            msg.guild.channels.find("name", "nest").sendMessage("\@everyone");
+           // msg.guild.channels.find("name", "nest").sendMessage("\@everyone");
             msg.guild.channels.find("name", "nest").sendMessage(nestmensagem);
  
               //fim mensagem 
