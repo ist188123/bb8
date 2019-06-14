@@ -314,7 +314,7 @@ client.on("message", async (msg) => {
 
                     }
 
-             if(!isNaN(tiporaid)){
+             if(typeof tiporaid == "number" ){
                     var date = new Date();
 
                     var horaatual = add_minutes(date, 0)
@@ -340,7 +340,7 @@ client.on("message", async (msg) => {
               msg.channel.send({
                 embed: {
                     color: 3447003,
-                    description: "ATENÇÃO:\nFalta o **nivel** da raid exemplo:\n!i **1** piscinas 22"
+                    description: "ATENÇÃO:\nFalta o **nivel** da raid exemplo:\n!i **1** piscinas 22\n\nOu o Pokemon "+boss+" não está carregado"
                 }
             });
           
