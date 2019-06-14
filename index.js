@@ -222,7 +222,7 @@ var ovo="";
     }
 
 
-var raid='http://pnraidspn.atwebpages.com/raid.php'
+
      function leinforaid(cb) {  //leraud
                 var pCode='http://pnraidspn.atwebpages.com/raid.php'
                 
