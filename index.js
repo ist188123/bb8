@@ -7,7 +7,7 @@ const http = require('http');
 
 client.on("message", async (msg) => {
 //console.log(tamanhoFicheiro)
-
+var mensagem=msg.content;
 
     //-------------------------
     //funcoes -----
@@ -72,6 +72,16 @@ client.on("message", async (msg) => {
 if (msg.channel.name == 'professor-boss') {
     
     
+    if (mensagem.startsWith("!i")) {
+        
+      msg.channel.send({
+                embed: {
+                    color: 3447003,
+                    description: mensagem
+                }
+            });
+    
+    }
     
     
     
