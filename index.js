@@ -297,7 +297,7 @@ var raid='http://pnraidspn.atwebpages.com/raid.php'
 
 
    
-
+setTimeout(function () {
 
         var date = new Date();
         
@@ -326,7 +326,7 @@ var raid='http://pnraidspn.atwebpages.com/raid.php'
 	      
  });//leinforaid	      
 	      
-	      
+	 }, 1500);      
 	      
 	      
 }  
