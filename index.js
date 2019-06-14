@@ -47,8 +47,13 @@ function leinforaid(cb) {  //leraud
               pCLatLng.forEach(nivel => {
                lista=lista +  "Raid "+nivel.nivel+" - "+nivel.boss+"\n"
                  })
-      
-                 console.log(lista)
+      msg.channel.send({
+                embed: {
+                    color: 3447003,
+                    description: "Raids carregadas:\n"+lista
+                }
+            });
+                 
               })
           }
 
