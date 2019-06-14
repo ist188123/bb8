@@ -259,7 +259,8 @@ var raid='http://pnraidspn.atwebpages.com/raid.php'
            boss=nivel.imagem
            
            })	
-           
+         setTimeout(function() {
+        }, 2000);
            //------------------------------
         
 
