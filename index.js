@@ -173,7 +173,7 @@ if (msg.channel.name == 'professor-boss') {
 
               const raidinfomsg = new Discord.RichEmbed()
                             .setColor('#FF0000')
-                            .setTitle(horaatual)
+                            .setTitle("\@everyone")
                             .setURL('https://discord.js.org/')
                             .setAuthor('ANUNCIO RAID ' + tiporaid, ovo, 'https://discord.js.org')
                             .setThumbnail(boss)
@@ -263,11 +263,11 @@ if (mensagem.startsWith('!nest')) {
             //mensagem
                const nestmensagem = new Discord.RichEmbed()
                 .setColor('#FF0000')
-                .setTitle('Reporte de ninho ' + hoje)
+                .setTitle("\@everyone"+" Reporte de ninho " + hoje)
                 .setURL('https://discord.js.org/')
                 .setAuthor('Ninho de ' + pokemon.toLocaleUpperCase(), imagem, 'https://discord.js.org')
                 .setThumbnail(imagem)
-                .addField('Local', "\@everyone\n"+onde)
+                .addField('Local', onde)
                .addField('Tipo', tipo )
                 //.addBlankField()
                 .addField('CP IV (100%)', cp, true)
