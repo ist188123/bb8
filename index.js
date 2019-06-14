@@ -314,7 +314,7 @@ client.on("message", async (msg) => {
 
                     }
 
-
+             if(!isNaN(tiporaid)){
                     var date = new Date();
 
                     var horaatual = add_minutes(date, 0)
@@ -336,7 +336,15 @@ client.on("message", async (msg) => {
                         .setTimestamp()
                         .setFooter('Anunciado por : ' + msg.author.username, 'https://exraidspinhalnovo.webnode.pt/_files/200000022-231042409e/200/damasc010.png');
                     msg.guild.channels.find("name", "info-raids").sendMessage(raidinfomsg);
-
+          }else{
+              msg.channel.send({
+                embed: {
+                    color: 3447003,
+                    description: "ATENÇÃO:\nFalta o **nivel** da raid exemplo:\n!i **1** piscinas 22"
+                }
+            });
+          
+          }
 
 
 
