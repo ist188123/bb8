@@ -257,10 +257,7 @@ var raid='http://pnraidspn.atwebpages.com/raid.php'
             output.forEach(nivel => {
             tiporaid = nivel.nivel
             boss=nivel.imagem
-msg.channel.send({embed: {
-  color: 3447003,
-  description: boss
-}});  
+
            
            })	
         
@@ -296,7 +293,10 @@ msg.channel.send({embed: {
         }
        
     
-
+msg.channel.send({embed: {
+  color: 3447003,
+  description:"--- "+ boss
+}});  
 
 
 
