@@ -215,7 +215,12 @@ if (msg.content.startsWith('!quest')) {
     var tiporaid = "";
     var tempo = "";
     var local = "";
+	   
     tiporaid = msginfo.split(" ")[1]
+	    msg.channel.send({embed: {
+  color: 3447003,
+  description: "msginfo.split(" ")[1] tiporaid ="+ tiporaid
+}}); 
 
     //tempo falta
     tempo = msginfo.split(" ")[msginfo.split(" ").length - 1]
