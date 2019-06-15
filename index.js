@@ -112,7 +112,7 @@ if (msg.channel.name == 'professor-boss') {
             pCLatLng.forEach(nivel => {
                 if (ispokemon) {
 
-                    if (nivel.boss == tiporaid) {
+                    if (nivel.boss.toLocaleUpperCase() == tiporaid.toLocaleUpperCase()) {
                         tiporaid = nivel.nivel;
                         boss = nivel.imagem;
 
@@ -246,7 +246,7 @@ if (mensagem.startsWith('!nest')) {
         var tipo="";
         var result = await leinforaid(endereco, async function (pCLatLng) {
             pCLatLng.forEach(nivel => {
-                if(nivel.boss==qualPokemon){
+                if(nivel.boss.toLocaleUpperCase()==qualPokemon.toLocaleUpperCase()){
                     achou=true;
                     cp="";
                     pokemon=nivel.boss;
@@ -290,7 +290,7 @@ if (mensagem.startsWith('!nest')) {
         })
     }
     
-    getNest('http://pnraidspn.atwebpages.com/nest.php',find)
+    getNest('http://pnraidspn.atwebpages.com/raid.php',find)
 
 }//fim !nest----
 
