@@ -57,7 +57,7 @@ var mensagem=msg.content;
             msg.channel.send({
                 embed: {
                     color: 3447003,
-                    description: "Raids disponiveis\n" + lista
+                    description: "**Raids disponiveis**\n" + lista+"\nPN PoGo Raids"
                 }
             });
 
@@ -65,17 +65,23 @@ var mensagem=msg.content;
     }
 
     
-  async function listapokestop(endereco) {
+  async function listapokestop(endereco,oquelista) {
 
     var lista = "";
     var result = await leinforaid(endereco, async function (pCLatLng) {
         pCLatLng.forEach(nivel => {
             lista = lista + nivel.cod + "\n" + nivel.local + "\n"
         })
+        var nomelista="";
+        if(oquelista=='ginasio'){
+        nomelista="**Ginasios**\n"
+        }else{
+        nomelista="**Pokestops**\n"
+        }
  msg.channel.send({
                 embed: {
                     color: 3447003,
-                    description: "Pokestops\n" + lista
+                    description: nomelista + lista+"\nPN PoGo Raids"
                 }
             });
 
@@ -83,7 +89,7 @@ var mensagem=msg.content;
     })
 }
  
-    
+
     
     
     //-------------------------
@@ -92,15 +98,22 @@ var mensagem=msg.content;
 
 
 if (msg.channel.name == 'professor-boss') {
-    
+   
+    if (mensagem.startsWith("!ginasio")) {
+    listapokestop('http://pnraidspn.atwebpages.com/ginasios.php',mensagem.substring(1))
+     }
     
     if (mensagem.startsWith("!pokestop")) {
-    listapokestop('http://pnraidspn.atwebpages.com/poketstop.php')
+    listapokestop('http://pnraidspn.atwebpages.com/poketstop.php',mensagem.substring(1))
+     }
+    
+    
+    
+    if (msg.content.startsWith("!listar")) {
+    listaraids('http://pnraidspn.atwebpages.com/raid.php')
 
-}
-    
-    
-    
+}   
+     
     
      //-------------------------
     //----- anunicar raids
@@ -253,10 +266,7 @@ if (msg.channel.name == 'professor-boss') {
     
     
     
- if (msg.content.startsWith("!listar")) {
-    listaraids('http://pnraidspn.atwebpages.com/raid.php')
-
-}   
+ 
     
     
     
