@@ -252,7 +252,7 @@ if (mensagem.startsWith('!nest')) {
                     pokemon=nivel.boss;
                     imagem=nivel.imagem;
                     tipo=nivel.bosstipo
-                nivel.nivel.forEach(nivel => {
+                nivel.cpnivel.forEach(nivel => {
                     cp = cp + "\n" + nivel
                    
                 })
