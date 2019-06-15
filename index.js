@@ -64,12 +64,43 @@ var mensagem=msg.content;
         })
     }
 
+    
+  async function listapokestop(endereco) {
+
+    var lista = "";
+    var result = await leinforaid(endereco, async function (pCLatLng) {
+        pCLatLng.forEach(nivel => {
+            lista = lista + nivel.cod + "\n" + nivel.local + "\n"
+        })
+ msg.channel.send({
+                embed: {
+                    color: 3447003,
+                    description: "Pokestops\n" + lista
+                }
+            });
+
+       
+    })
+}
+ 
+    
+    
+    
     //-------------------------
     //fim funcoes -----
     //-------------------------
 
 
 if (msg.channel.name == 'professor-boss') {
+    
+    
+    if (mensagem.startsWith("!pokestop")) {
+    listapokestop('http://pnraidspn.atwebpages.com/poketstop.php')
+
+}
+    
+    
+    
     
      //-------------------------
     //----- anunicar raids
