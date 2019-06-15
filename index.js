@@ -105,8 +105,8 @@ if (msg.channel.name == 'professor-boss') {
         var ispokemon = isNaN(tiporaid);
         console.log("--ispokemon--->", ispokemon)
         if (ispokemon) {
-            tempo = -tempo
-            console.log(tempo)
+            tempo = -(45 - parseInt(tempo))
+            
         }
         var result = await leinforaid(endereco,async function (pCLatLng) {
             pCLatLng.forEach(nivel => {
