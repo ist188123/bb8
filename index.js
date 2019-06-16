@@ -80,8 +80,8 @@ var mensagem=msg.content;
             
             
         })
-        
-      
+       setTimeout(function () {
+       }, 1500);
  msg.channel.send({
                 embed: {
                     color: 3447003,
