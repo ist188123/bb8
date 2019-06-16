@@ -64,16 +64,14 @@ var mensagem=msg.content;
         })
     }
 
-    
-async function listapokestop(endereco,oquelista) {
+    async function listapokestop(endereco,oquelista) {
 
     var lista = "";
     var result = await leinforaid(endereco, async function (pCLatLng) {
         pCLatLng.forEach(nivel => {
-           lista = lista + nivel.cod + "\n" + nivel.local + "\n"
-        } 
-            
-            
+        
+       lista = lista + nivel.cod + "\n" + nivel.local + "\n"
+       
         })
         var nomelista="";
        if(oquelista.startsWith('ginasio')){
@@ -81,8 +79,6 @@ async function listapokestop(endereco,oquelista) {
         }else{
         nomelista="**Pokestops**\n"
         }
- 
-      
  msg.channel.send({
                 embed: {
                     color: 3447003,
@@ -93,9 +89,8 @@ async function listapokestop(endereco,oquelista) {
        
     })
 }
- 
 
-    
+     
     
     //-------------------------
     //fim funcoes -----
