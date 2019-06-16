@@ -70,18 +70,14 @@ var mensagem=msg.content;
     var lista = "";
     var result = await leinforaid(endereco, async function (pCLatLng) {
         pCLatLng.forEach(nivel => {
-              if(oquelista.startsWith('ginasio')){
-                  nomelista="**Ginasios**\n"
+              
          lista = lista + nivel.cod + "\n" +nivel.morada + "\n" +nivel.local + "\n"
-        }else{
-             nomelista="**Pokestops**\n"
-       lista = lista + nivel.cod + "\n" + nivel.local + "\n"
+       
         } 
             
             
         })
-       setTimeout(function () {
-       }, 1500);
+      
  msg.channel.send({
                 embed: {
                     color: 3447003,
