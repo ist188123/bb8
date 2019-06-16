@@ -65,18 +65,23 @@ var mensagem=msg.content;
     }
 
     
-  async function listapokestop(endereco,oquelista) {
-    var nomelista="";
+async function listapokestop(endereco,oquelista) {
+
     var lista = "";
     var result = await leinforaid(endereco, async function (pCLatLng) {
         pCLatLng.forEach(nivel => {
-              
-         lista = lista + nivel.cod + "\n" +nivel.morada + "\n" +nivel.local + "\n"
-       
+           lista = lista + nivel.cod + "\n" + nivel.local + "\n"
         } 
             
             
         })
+        var nomelista="";
+       if(oquelista.startsWith('ginasio')){
+        nomelista="**Ginasios**\n"
+        }else{
+        nomelista="**Pokestops**\n"
+        }
+ 
       
  msg.channel.send({
                 embed: {
