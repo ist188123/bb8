@@ -71,7 +71,7 @@ var mensagem=msg.content;
     var result = await leinforaid(endereco, async function (pCLatLng) {
         pCLatLng.forEach(nivel => {
               if(oquelista.startsWith('ginasio')){
-         lista = lista + nivel.cod + "\n" +nivel.morada+"\n"+ nivel.local + "\n"
+         lista = lista + nivel.cod + "\n" +nivel.morada + "\n"
         }else{
        lista = lista + nivel.cod + "\n" + nivel.local + "\n"
         } 
