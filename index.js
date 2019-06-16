@@ -135,7 +135,7 @@ if (msg.channel.name == 'professor-boss') {
 
     //tempo falta
     tempo = mensagem.split(" ")[mensagem.split(" ").length - 1]
-
+     var waitnotifica=tempo
 
 
 
@@ -228,6 +228,46 @@ if (msg.channel.name == 'professor-boss') {
                             .setTimestamp()
                             .setFooter('Anunciado por : ' + msg.author.username, 'https://exraidspinhalnovo.webnode.pt/_files/200000022-231042409e/200/damasc010.png');
                         msg.guild.channels.find("name", "info-raids").sendMessage(raidinfomsg);
+                
+                setTimeout(function () {
+                    var abertaoufechada="Abriu"
+                    
+                    if (ispokemon) {
+                        abertaoufechada="Terminar"
+                        //----
+                        
+                       
+                        
+                        
+                        
+                        
+                         const radiinfo = new Discord.RichEmbed()
+                            .setColor('#FF0000')
+                            .setTitle("\@everyone")
+                            .addField('Ginásio', local)
+                            //.addBlankField()
+                            .addField('RAID A TERMINAR', 'JJ', false)
+                            .setTimestamp()
+                            .setFooter('PN PoGo Raids', 'https://exraidspinhalnovo.webnode.pt/_files/200000022-231042409e/200/damasc010.png');
+                        msg.guild.channels.find("name", "💬-chat-geral").sendMessage(radiinfo);
+                
+                        
+                        
+                        //----
+                        //console.log("Faltam 5 minutos para "+abertaoufechada+"\nRAID NIVEL "+tiporaid+"\nLocal:"+local)
+                     }else{
+                        //console.log(abertaoufechada+"\nRAID NIVEL "+tiporaid+"\nLocal:"+local) 
+                        setTimeout(function () {
+                            //console.log("Faltam 5 minutos para terminar\nRAID NIVEL "+tiporaid+"\nLocal:"+local)
+                        }, 1*60000); 
+                    }     
+
+         
+                }, waitnotifica*60000); 
+                
+                
+                
+                
             } else {
             msg.channel.send({
                             embed: {
