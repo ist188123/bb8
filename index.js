@@ -72,7 +72,7 @@ var mensagem=msg.content;
         pCLatLng.forEach(nivel => {
               if(oquelista.startsWith('ginasio')){
                   nomelista="**Ginasios**\n"
-         lista = lista + nivel.cod + "\n" +nivel.morada + "\n"
+         lista = lista + nivel.cod + "\n" +nivel.morada + "\n" +nivel.local + "\n"
         }else{
              nomelista="**Pokestops**\n"
        lista = lista + nivel.cod + "\n" + nivel.local + "\n"
