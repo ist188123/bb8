@@ -243,7 +243,7 @@ if (msg.channel.name == 'professor-boss') {
                         
                          const radiinfo = new Discord.RichEmbed()
                             .setColor('#FF0000')
-                            .setTitle("\@everyone")
+                           .setTitle("INFORMAÇÃO\n\@everyone")
                             .setThumbnail(boss)
                             .addField('A terminar', "Raid Nivel "+ tiporaid)
                             .addField('Fecha', fecha)
@@ -261,7 +261,7 @@ if (msg.channel.name == 'professor-boss') {
                          
                          const radiinf = new Discord.RichEmbed()
                             .setColor('#FF0000')
-                            .setTitle("\@everyone")
+                            .setTitle("INFORMAÇÃO\n\@everyone")
                             .setThumbnail(boss)
                             .addField('Abriu', "Raid Nivel "+ tiporaid)
                             .addField('Fecha', fecha)
@@ -278,7 +278,7 @@ if (msg.channel.name == 'professor-boss') {
                         setTimeout(function () {
                             const radiinf = new Discord.RichEmbed()
                             .setColor('#FF0000')
-                            .setTitle("\@everyone")
+                            .setTitle("INFORMAÇÃO\n\@everyone")
                             .setThumbnail(boss)
                             .addField('A terminar', "Raid Nivel "+ tiporaid)
                             .addField('Fecha', fecha)
