@@ -244,9 +244,10 @@ if (msg.channel.name == 'professor-boss') {
                          const radiinfo = new Discord.RichEmbed()
                             .setColor('#FF0000')
                             .setTitle("\@everyone")
-                            .addField('Ginásio', local)
+                            .addField('A terminar', "Raid Nivel "+ tiporaid)
+                            .addField('Fecha', fecha)
                             //.addBlankField()
-                            .addField('RAID A TERMINAR', 'JJ', false)
+                            .addField('Ginásio', local)
                             .setTimestamp()
                             .setFooter('PN PoGo Raids', 'https://exraidspinhalnovo.webnode.pt/_files/200000022-231042409e/200/damasc010.png');
                         msg.guild.channels.find("name", "💬-chat-geral").sendMessage(radiinfo);
@@ -260,9 +261,10 @@ if (msg.channel.name == 'professor-boss') {
                          const radiinf = new Discord.RichEmbed()
                             .setColor('#FF0000')
                             .setTitle("\@everyone")
-                            .addField('Ginásio', local)
+                            .addField('Abriu', "Raid Nivel "+ tiporaid)
+                            .addField('Fecha', fecha)
                             //.addBlankField()
-                            .addField('RAID A TERMINAR', 'JJ', false)
+                            .addField('Ginásio', local)
                             .setTimestamp()
                             .setFooter('PN PoGo Raids', 'https://exraidspinhalnovo.webnode.pt/_files/200000022-231042409e/200/damasc010.png');
                         msg.guild.channels.find("name", "💬-chat-geral").sendMessage(radiinf);
@@ -275,15 +277,16 @@ if (msg.channel.name == 'professor-boss') {
                             const radiinf = new Discord.RichEmbed()
                             .setColor('#FF0000')
                             .setTitle("\@everyone")
-                            .addField('Ginásio', local)
+                            .addField('A terminar', "Raid Nivel "+ tiporaid)
+                            .addField('Fecha', fecha)
                             //.addBlankField()
-                            .addField('RAID A TERMINAR', 'JJ', false)
+                            .addField('Ginásio', local)
                             .setTimestamp()
                             .setFooter('PN PoGo Raids', 'https://exraidspinhalnovo.webnode.pt/_files/200000022-231042409e/200/damasc010.png');
                         msg.guild.channels.find("name", "💬-chat-geral").sendMessage(radiinf);
                 
                             //console.log("Faltam 5 minutos para terminar\nRAID NIVEL "+tiporaid+"\nLocal:"+local)
-                        }, 1*60000); 
+                        }, 40*60000); 
                     }     
 
          
