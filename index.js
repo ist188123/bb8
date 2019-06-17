@@ -179,10 +179,10 @@ if (msg.channel.name == 'professor-boss') {
 
             switch (tiporaid) {
                 case "1":
-                    ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
+                    ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000097-88ffa8a090/200/nivel1.png";
                     break;
                 case "2":
-                    ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
+                    ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000097-88ffa8a090/200/nivel1.png";
                     break;
 
                 case "3":
@@ -244,6 +244,7 @@ if (msg.channel.name == 'professor-boss') {
                          const radiinfo = new Discord.RichEmbed()
                             .setColor('#FF0000')
                             .setTitle("\@everyone")
+                            .setThumbnail(boss)
                             .addField('A terminar', "Raid Nivel "+ tiporaid)
                             .addField('Fecha', fecha)
                             //.addBlankField()
@@ -261,6 +262,7 @@ if (msg.channel.name == 'professor-boss') {
                          const radiinf = new Discord.RichEmbed()
                             .setColor('#FF0000')
                             .setTitle("\@everyone")
+                            .setThumbnail(boss)
                             .addField('Abriu', "Raid Nivel "+ tiporaid)
                             .addField('Fecha', fecha)
                             //.addBlankField()
@@ -277,6 +279,7 @@ if (msg.channel.name == 'professor-boss') {
                             const radiinf = new Discord.RichEmbed()
                             .setColor('#FF0000')
                             .setTitle("\@everyone")
+                            .setThumbnail(boss)
                             .addField('A terminar', "Raid Nivel "+ tiporaid)
                             .addField('Fecha', fecha)
                             //.addBlankField()
