@@ -163,7 +163,7 @@ if (msg.channel.name == 'professor-boss') {
      
     
     
-    if (mensagem.startsWith("!quest")) {
+    if (mensagem.startsWith("!listarq")) {
         
    
     if (mensagem.split(' ').length > 1) {
