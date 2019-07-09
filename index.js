@@ -166,10 +166,6 @@ if (msg.channel.name == 'professor-boss') {
     if (mensagem.startsWith("!listaq")) {
         
    
-    if (mensagem.split(' ').length > 1) {
-        sort_by_tipo = mensagem.split(' ')[1]
-    }
-
     listar_quest('http://pnraidspn.atwebpages.com/teste.php', sort_by_tipo)
 }
     
