@@ -27,6 +27,20 @@ var mensagem=msg.content;
         return mzero;
     }
 
+    function sortByProperty(property){  
+    return function(a,b){  
+       if(a[property] > b[property])  
+          return 1;  
+       else if(a[property] < b[property])  
+          return -1;  
+   
+       return 0;  
+    }  
+ }
+
+    
+    
+    
     //var pCode='http://pnraidspn.atwebpages.com/raid.php'
     function leinforaid(pCode, cb) {  //leraud
 
@@ -92,6 +106,39 @@ var mensagem=msg.content;
 
      
     
+    
+ //--listar quest   
+    
+   
+async function listar_quest(endereco, tipo_pesquisa) {
+
+    var lista = "";
+    var result = await leinforaid(endereco, async function (pCLatLng) {
+
+
+
+
+        var sort_quest = pCLatLng.sort(sortByProperty(tipo_pesquisa))
+
+
+
+
+        pCLatLng.forEach(nivel => {
+            lista = lista + "\n" + nivel.cod + "\n**Missão**\n" + nivel.missao + "\n**Recompensa**\n" + nivel.quest + "\n\n"
+        })
+        
+        
+          msg.channel.send({
+              embed: {
+                  color: 3447003,
+                  description: "**Quest disponiveis**\n" + lista+"\nPN PoGo Raids"
+              }
+          });
+  
+    })
+}
+
+    
     //-------------------------
     //fim funcoes -----
     //-------------------------
@@ -111,9 +158,19 @@ if (msg.channel.name == 'professor-boss') {
     
     if (msg.content.startsWith("!listar")) {
     listaraids('http://pnraidspn.atwebpages.com/raid.php')
-
+    
 }   
      
+    
+    
+    if (mensagem.startsWith("!quest")) {
+    var sort_by_tipo = "quest"
+    if (mensagem.split(' ').length > 1) {
+        sort_by_tipo = mensagem.split(' ')[1]
+    }
+
+    listar_quest('http://pnraidspn.atwebpages.com/teste.php', sort_by_tipo)
+}
     
      //-------------------------
     //----- anunicar raids
