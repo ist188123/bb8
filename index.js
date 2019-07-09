@@ -8,7 +8,7 @@ const http = require('http');
 client.on("message", async (msg) => {
 //console.log(tamanhoFicheiro)
 var mensagem=msg.content;
-
+var sort_by_tipo = "quest"
     //-------------------------
     //funcoes -----
     //-------------------------
@@ -111,7 +111,7 @@ var mensagem=msg.content;
     
    
 async function listar_quest(endereco, tipo_pesquisa) {
-
+   
     var lista = "";
     var result = await leinforaid(endereco, async function (pCLatLng) {
 
@@ -145,7 +145,7 @@ async function listar_quest(endereco, tipo_pesquisa) {
 
 
 if (msg.channel.name == 'professor-boss') {
-   var mensagem=msg.content;
+  
     if (mensagem.startsWith("!ginasio")) {
     listapokestop('http://pnraidspn.atwebpages.com/ginasios.php',mensagem.substring(1))
      }
@@ -155,8 +155,8 @@ if (msg.channel.name == 'professor-boss') {
      }
     
     
-    
-    if (msg.content.startsWith("!listar")) {
+    //if (msg.content.startsWith("!listar")) {
+    if (mensagem.startsWith("!listar")) {
     listaraids('http://pnraidspn.atwebpages.com/raid.php')
     
 }   
@@ -164,6 +164,7 @@ if (msg.channel.name == 'professor-boss') {
     
     
     if (mensagem.startsWith("!quest")) {
+        
     var sort_by_tipo = "quest"
     if (mensagem.split(' ').length > 1) {
         sort_by_tipo = mensagem.split(' ')[1]
