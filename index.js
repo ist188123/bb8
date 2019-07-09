@@ -145,7 +145,7 @@ async function listar_quest(endereco, tipo_pesquisa) {
 
 
 if (msg.channel.name == 'professor-boss') {
-   
+   var mensagem=msg.content;
     if (mensagem.startsWith("!ginasio")) {
     listapokestop('http://pnraidspn.atwebpages.com/ginasios.php',mensagem.substring(1))
      }
