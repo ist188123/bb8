@@ -123,7 +123,7 @@ async function listar_quest(endereco, tipo_pesquisa) {
 
 
 
-        pCLatLng.forEach(nivel => {
+        sort_quest.forEach(nivel => {
             lista = lista + "\n" + nivel.cod + "\n**Missão**\n" + nivel.missao + "\n**Recompensa**\n" + nivel.quest + "\n\n"
         })
         
@@ -165,7 +165,7 @@ if (msg.channel.name == 'professor-boss') {
     
     if (mensagem.startsWith("!quest")) {
         
-    var sort_by_tipo = "quest"
+   
     if (mensagem.split(' ').length > 1) {
         sort_by_tipo = mensagem.split(' ')[1]
     }
