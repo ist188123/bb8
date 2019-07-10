@@ -115,12 +115,6 @@ async function listar_quest(endereco, tipo_pesquisa) {
     var lista = "";
     var result = await leinforaid(endereco, async function (pCLatLng) {
 
- msg.channel.send({
-              embed: {
-                  color: 3447003,
-                  description: "unction listar_quest" +pCLatLng
-              }
-          });
 
 
         var sort_quest = pCLatLng.sort(sortByProperty(tipo_pesquisa))
