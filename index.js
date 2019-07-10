@@ -27,16 +27,7 @@ var sort_by_tipo = "quest"
         return mzero;
     }
 
-    function sortByProperty(property){  
-    return function(a,b){  
-       if(a[property] > b[property])  
-          return 1;  
-       else if(a[property] < b[property])  
-          return -1;  
-   
-       return 0;  
-    }  
- }
+    
 
     
     
@@ -117,7 +108,7 @@ async function listar_quest(endereco) {
 
 
 
-        var sort_quest = pCLatLng.sort(sortByProperty("quest"))
+     //   var sort_quest = pCLatLng.sort(sortByProperty("quest"))
  msg.channel.send({
               embed: {
                   color: 3447003,
