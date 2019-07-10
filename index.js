@@ -110,14 +110,14 @@ var sort_by_tipo = "quest"
  //--listar quest   
     
    
-async function listar_quest(endereco, tipo_pesquisa) {
+async function listar_quest(endereco) {
    
     var lista = "";
     var result = await leinforaid(endereco, async function (pCLatLng) {
 
 
 
-        var sort_quest = pCLatLng.sort(sortByProperty(tipo_pesquisa))
+        var sort_quest = pCLatLng.sort(sortByProperty("quest"))
  msg.channel.send({
               embed: {
                   color: 3447003,
@@ -169,7 +169,7 @@ if (msg.channel.name == 'professor-boss') {
     
     if (mensagem.startsWith("!listaq")) {
          
-    listar_quest('http://pnraidspn.atwebpages.com/teste.php', sort_by_tipo)
+    listar_quest('http://pnraidspn.atwebpages.com/teste.php')
 }
     
      //-------------------------
