@@ -122,7 +122,7 @@ async function listar_quest(endereco, tipo_pesquisa) {
 
 
 
-        sort_quest.forEach(nivel => {
+        pCLatLng.forEach(nivel => {
             lista = lista + "\n" + nivel.cod + "\n**Missão**\n" + nivel.missao + "\n**Recompensa**\n" + nivel.quest + "\n\n"
         })
         
@@ -163,13 +163,7 @@ if (msg.channel.name == 'professor-boss') {
     
     
     if (mensagem.startsWith("!listaq")) {
-         msg.channel.send({
-              embed: {
-                  color: 3447003,
-                  description: "!listaq-->" + mensagem
-              }
-          });
-   
+         
     listar_quest('http://pnraidspn.atwebpages.com/teste.php', sort_by_tipo)
 }
     
