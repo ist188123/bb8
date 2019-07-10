@@ -118,7 +118,12 @@ async function listar_quest(endereco, tipo_pesquisa) {
 
 
         var sort_quest = pCLatLng.sort(sortByProperty(tipo_pesquisa))
-
+ msg.channel.send({
+              embed: {
+                  color: 3447003,
+                  description:  sort_quest
+              }
+          });
 
 
 
