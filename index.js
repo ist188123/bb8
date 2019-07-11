@@ -138,6 +138,8 @@ async function getpokeinfo(findboss) {
                 .addField('CP IV', nivel.cpiv)
                 .addField('Bosted', nivel.bosted)
                 .addField('Tipo', nivel.bosstipo)
+                .addField('ATK DEF STA', nivel.ade)
+                .addField('Max CP', nivel.maxcp)
                 .addField('Fraco contra', nivel.fraco)
 
                 .addField('Counters', nivel.counter)
