@@ -99,21 +99,33 @@ var sort_by_tipo = "quest"
    
     
  //--listar quest   
-    async function listar_quest(endereco) {
+    async function listar_quest(endereco, tipo_pesquisa) {
 
-        var lista = "";
-        var result = await leinforaid(endereco, async function (pCLatLng) {
-            pCLatLng.forEach(nivel => {
-                 lista = lista + "\n" + nivel.cod + "\n**Missão**\n" + nivel.missao + "\n**Recompensa**\n" + nivel.quest + "\n\n"
-            })
-       msg.channel.send({
-                embed: {
-                    color: 3447003,
-                    description: "**Quest disponiveis**\n" + texto+"\nPN PoGo Raids"
-                }
-            });
+    var lista = "";
+    var result = await leinforaid(endereco, async function (pCLatLng) {
+
+
+
+
+        var sort_quest = await pCLatLng.sort(sortByProperty(tipo_pesquisa))
+
+
+
+
+        await sort_quest.forEach(nivel => {
+            lista = lista + "\n" + nivel.cod + "\n**Missão**\n" + nivel.missao + "\n**Recompensa**\n" + nivel.quest + "\n\n"
         })
-    }
+       // await console.log(lista)
+        
+        await  msg.channel.send({
+              embed: {
+                  color: 3447003,
+                  description: "**Quest disponiveis**\n" + lista+"\nPN PoGo Raids"
+              }
+          });
+  
+    })
+}
    
 
 
