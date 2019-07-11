@@ -122,7 +122,12 @@ var sort_by_tipo = "quest"
 
         var sort_quest = await pCLatLng.sort(sortByProperty("quest"))
 
-
+   msg.channel.send({
+              embed: {
+                  color: 3447003,
+                  description: "**Quest disponiveis**\n" + sort_quest+"\nPN PoGo Raids"
+              }
+          });
 
 
         await sort_quest.forEach(nivel => {
@@ -130,7 +135,7 @@ var sort_by_tipo = "quest"
         })
        // await console.log(lista)
         
-        await  msg.channel.send({
+          msg.channel.send({
               embed: {
                   color: 3447003,
                   description: "**Quest disponiveis**\n" + lista+"\nPN PoGo Raids"
