@@ -99,6 +99,24 @@ var sort_by_tipo = "quest"
    
     
  //--listar quest  
+    
+ function mostraQuest(httpquest){
+    var lista = "";
+    httpquest.forEach(nivel => {
+        lista = lista + "\n" + nivel.cod + "\n**Missão**\n" + nivel.missao + "\n**Recompensa**\n" + nivel.quest + "\n\n"
+    });
+
+   msg.channel.send({
+              embed: {
+                  color: 3447003,
+                  description: "**Quest disponiveis**\n" + lista+"\nPN PoGo Raids"
+              }
+          });
+}
+    
+    
+    
+    
     function sortByProperty(property) {
     return function (a, b) {
         if (a[property] > b[property])
@@ -112,7 +130,7 @@ var sort_by_tipo = "quest"
     
     
     
-    async function listar_quest(endereco) {
+   async function listar_quest(endereco) {
 
     var lista = "";
     var result = await leinforaid(endereco, async function (pCLatLng) {
@@ -121,27 +139,22 @@ var sort_by_tipo = "quest"
 
 
         var sort_quest = await pCLatLng.sort(sortByProperty("quest"))
+        //await console.log(sort_quest)
+        mostraQuest(sort_quest)
 
-   msg.channel.send({
-              embed: {
-                  color: 3447003,
-                  description: "**Quest disponiveis**\n" + sort_quest+"\nPN PoGo Raids"
-              }
-          });
-
-
+/*
         await sort_quest.forEach(nivel => {
             lista = lista + "\n" + nivel.cod + "\n**Missão**\n" + nivel.missao + "\n**Recompensa**\n" + nivel.quest + "\n\n"
         })
        // await console.log(lista)
         
-          msg.channel.send({
+        await  msg.channel.send({
               embed: {
                   color: 3447003,
                   description: "**Quest disponiveis**\n" + lista+"\nPN PoGo Raids"
               }
           });
-  
+  */
     })
 }
    
