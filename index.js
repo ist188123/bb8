@@ -73,7 +73,7 @@ var sort_by_tipo = "quest"
 
     var lista = "";
     var result = await leinforaid(endereco, async function (pCLatLng) {
-        pCLatLng.forEach(nivel => {
+       await pCLatLng.forEach(nivel => {
         
        lista = lista + nivel.cod + "\n" + nivel.local + "\n"
        
@@ -84,7 +84,7 @@ var sort_by_tipo = "quest"
         }else{
         nomelista="**Pokestops**\n"
         }
- msg.channel.send({
+ await msg.channel.send({
                 embed: {
                     color: 3447003,
                     description: nomelista + lista+"\nPN PoGo Raids"
@@ -98,8 +98,21 @@ var sort_by_tipo = "quest"
      
    
     
- //--listar quest   
-    async function listar_quest(endereco, tipo_pesquisa) {
+ //--listar quest  
+    function sortByProperty(property) {
+    return function (a, b) {
+        if (a[property] > b[property])
+            return 1;
+        else if (a[property] < b[property])
+            return -1;
+
+        return 0;
+    }
+}
+    
+    
+    
+    async function listar_quest(endereco) {
 
     var lista = "";
     var result = await leinforaid(endereco, async function (pCLatLng) {
@@ -107,7 +120,7 @@ var sort_by_tipo = "quest"
 
 
 
-        var sort_quest = await pCLatLng.sort(sortByProperty(tipo_pesquisa))
+        var sort_quest = await pCLatLng.sort(sortByProperty("quest"))
 
 
 
