@@ -100,20 +100,7 @@ var sort_by_tipo = "quest"
     
  //--listar quest  
     
-async function mostraQuest(httpquest){
-    var lista = "";
-    httpquest.forEach(nivel => {
-        lista = lista + "\n" + nivel.cod + "\n**Missão**\n" + nivel.missao + "\n**Recompensa**\n" + nivel.quest + "\n\n"
-    });
-
-  await msg.channel.send({
-              embed: {
-                  color: 3447003,
-                  description: "**Quest disponiveis**\n" + lista+"\nPN PoGo Raids"
-              }
-          });
-}
-    
+   
     
     
     
@@ -130,33 +117,30 @@ async function mostraQuest(httpquest){
     
     
     
-   async function listar_quest(endereco) {
+   function listar_quest(endereco) {
 
-    var lista = "";
-    var result = await leinforaid(endereco, async function (pCLatLng) {
-
-
-
-
-        var sort_quest = await pCLatLng.sort(sortByProperty("quest"))
-        //await console.log(sort_quest)
-        mostraQuest(sort_quest)
-
-/*
-        await sort_quest.forEach(nivel => {
-            lista = lista + "\n" + nivel.cod + "\n**Missão**\n" + nivel.missao + "\n**Recompensa**\n" + nivel.quest + "\n\n"
-        })
-       // await console.log(lista)
-        
-        await  msg.channel.send({
-              embed: {
-                  color: 3447003,
-                  description: "**Quest disponiveis**\n" + lista+"\nPN PoGo Raids"
-              }
-          });
-  */
+   // const url = "http://pnraidspn.atwebpages.com/teste.php";
+   const url = endereco
+http.get(url, res => {
+  res.setEncoding("utf8");
+  let body = "";
+  let lista=""
+  res.on("data", data => {
+    body += data;
+  });
+  res.on("end", () => {
+    body = JSON.parse(body);
+    body.forEach(nivel => {
+        lista = lista + "\n" + nivel.cod + "\n**Missão**\n" + nivel.missao + "\n**Recompensa**\n" + nivel.quest + "\n\n"
     })
-}
+    msg.channel.send({
+        embed: {
+            color: 3447003,
+            description: "**Quest disponiveis**\n" + lista+"\nPN PoGo Raids"
+        }
+    });
+  });
+});
    
 
 
