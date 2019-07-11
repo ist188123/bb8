@@ -117,30 +117,6 @@ var sort_by_tipo = "quest"
     
     
     
-   function listar_quest(endereco) {
-
-   // const url = "http://pnraidspn.atwebpages.com/teste.php";
-   const url = endereco
-http.get(url, res => {
-  res.setEncoding("utf8");
-  let body = "";
-  let lista=""
-  res.on("data", data => {
-    body += data;
-  });
-  res.on("end", () => {
-    body = JSON.parse(body);
-    body.forEach(nivel => {
-        lista = lista + "\n" + nivel.cod + "\n**Missão**\n" + nivel.missao + "\n**Recompensa**\n" + nivel.quest + "\n\n"
-    })
-    msg.channel.send({
-        embed: {
-            color: 3447003,
-            description: "**Quest disponiveis**\n" + lista+"\nPN PoGo Raids"
-        }
-    });
-  });
-});
    
 
 
@@ -171,7 +147,7 @@ if (msg.channel.name == 'professor-boss') {
     
     if (mensagem.startsWith("!listaq")) {
          
-    listar_quest('http://pnraidspn.atwebpages.com/teste.php')
+   // listar_quest('http://pnraidspn.atwebpages.com/teste.php')
 }
     
      //-------------------------
