@@ -116,53 +116,45 @@ var sort_by_tipo = "quest"
 }
     
     
-   async function show_quest(squest) {
-var lista=""
-    await squest.forEach(nivel => {
-        lista = lista + "\n" + nivel.cod + "\n**Missão**\n" + nivel.missao + "\n**Recompensa**\n" + nivel.quest + "\n\n"
-    })
-    msg.channel.send({
-        embed: {
-            color: 3447003,
-            description: "**Quest disponiveis**\n" + lista+"\nPN PoGo Raids"
-        }
-    });
-}
-
-
-
-
-
-
-function listar_quest(){
-
   
-    
-    'use strict';
-var request = require('request');
-
-var url = 'http://pnraidspn.atwebpages.com/teste.php';
-
-request.get({
-    url: url,
-    json: true,
-    headers: {'User-Agent': 'request'}
-  }, (err, res, data) => {
-    if (err) {
-      console.log('Error:', err);
-    } else if (res.statusCode !== 200) {
-      console.log('Status:', res.statusCode);
-    } else {
-      // data is already parsed as JSON:
-      show_quest(data)
-      //console.log(data);
-   }
-});
 
 
 
-} 
-   
+async function getpokeinfo(findboss) {
+
+    var lista = "";
+    var result = await leinforaid('http://pnraidspn.atwebpages.com/raid.php', async function (pCLatLng) {
+        pCLatLng.forEach(nivel => {
+             if(nivel.boss.toLocaleUpperCase().startsWith(findboss.toLocaleUpperCase())){
+                lista = lista + "Raid " + nivel.nivel + " - " + nivel.boss + "\n"
+
+                const raidinfomsg = new Discord.RichEmbed()
+                .setColor('#FF0000')
+                .setTitle("PN PoGo Raids")
+                .setURL('https://discord.js.org/')
+                .setAuthor('Informação :' + nivel.boss.toLocaleUpperCase(), nivel.imagem, 'https://discord.js.org')
+                .setThumbnail(nivel.imagem)
+                .addField('CP RAID', nivel.boss)
+                .addField('CP IV', nivel.cpiv)
+                .addField('Bosted', nivel.bosstipo)
+                .addField('Tipo', nivel.fraco)
+                .addField('Fraco contra', nivel.fraco)
+
+                .addField('Counters', nivel.counter)
+                //.addBlankField()
+                
+                .setTimestamp()
+                .setFooter('Solicitado por : ' + msg.author.username, 'https://exraidspinhalnovo.webnode.pt/_files/200000022-231042409e/200/damasc010.png');
+                msg.guild.channels.find("name", "💬-chat-geral").sendMessage(raidinfomsg);
+ }
+
+           
+           
+        })
+       
+
+    })
+}
 
 
     
@@ -184,15 +176,16 @@ if (msg.channel.name == 'professor-boss') {
     
     //if (msg.content.startsWith("!listar")) {
     if (mensagem.startsWith("!listar")) {
+       
     listaraids('http://pnraidspn.atwebpages.com/raid.php')
     
 }   
      
     
     
-    if (mensagem.startsWith("!listaq")) {
+    if (mensagem.startsWith("!p")) {
          
-   listar_quest('http://pnraidspn.atwebpages.com/teste.php')
+   getpokeinfo(mensagem.substring(3))
 }
     
      //-------------------------
