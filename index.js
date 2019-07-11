@@ -134,10 +134,10 @@ async function getpokeinfo(findboss) {
                 .setURL('https://discord.js.org/')
                 .setAuthor('Informação :' + nivel.boss.toLocaleUpperCase(), nivel.imagem, 'https://discord.js.org')
                 .setThumbnail(nivel.imagem)
-                .addField('CP RAID', nivel.boss)
+                .addField('CP RAID', nivel.bosscp)
                 .addField('CP IV', nivel.cpiv)
-                .addField('Bosted', nivel.bosstipo)
-                .addField('Tipo', nivel.fraco)
+                .addField('Bosted', nivel.bosted)
+                .addField('Tipo', nivel.bosstipo)
                 .addField('Fraco contra', nivel.fraco)
 
                 .addField('Counters', nivel.counter)
@@ -145,7 +145,7 @@ async function getpokeinfo(findboss) {
                 
                 .setTimestamp()
                 .setFooter('Solicitado por : ' + msg.author.username, 'https://exraidspinhalnovo.webnode.pt/_files/200000022-231042409e/200/damasc010.png');
-                msg.guild.channels.find("name", "💬-chat-geral").sendMessage(raidinfomsg);
+                msg.guild.channels.find("name", "professor-boss").sendMessage(raidinfomsg);
  }
 
            
