@@ -100,13 +100,13 @@ var sort_by_tipo = "quest"
     
  //--listar quest  
     
- function mostraQuest(httpquest){
+async function mostraQuest(httpquest){
     var lista = "";
     httpquest.forEach(nivel => {
         lista = lista + "\n" + nivel.cod + "\n**Missão**\n" + nivel.missao + "\n**Recompensa**\n" + nivel.quest + "\n\n"
     });
 
-   msg.channel.send({
+  await msg.channel.send({
               embed: {
                   color: 3447003,
                   description: "**Quest disponiveis**\n" + lista+"\nPN PoGo Raids"
